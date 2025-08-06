@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Periodic Table</title>
+    <link rel="stylesheet" href="table design.css" />
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="nav-logo">🔬 Periodic Table</div>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#table">Periodic Table</a>
+            <a href="#timeline">Timeline</a>
+            <a href="#mindmaps">Mind Maps</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <section id="home" class="section home-section">
+        <h1>Welcome to the Interactive Periodic Table</h1>
+        <p>Explore all the elements with interactive visuals, categories, and detailed information.</p>
+    </section>
+    <div class="info-section">
+        <h2>About the Periodic Table</h2>
+        <p>The Periodic Table is a tabular display of all known chemical elements, arranged by increasing atomic
+            number, electron configuration, and recurring chemical properties.</p>
+
+        <div class="info-columns">
+            <div class="info-box">
+                <h3>History</h3>
+                <p>It was first organized in 1869 by Russian chemist Dmitri Mendeleev, who arranged elements by
+                    atomic mass and predicted new ones.</p>
+            </div>
+            <div class="info-box">
+                <h3>Structure</h3>
+                <p>Elements are arranged in rows (periods) and columns (groups) based on similar properties. Metals
+                    are on the left, non-metals on the right.</p>
+            </div>
+            <div class="info-box">
+                <h3>Fun Fact</h3>
+                <p>Only 94 elements occur naturally. The rest are synthetic and made in laboratories!</p>
+            </div>
+        </div>
+        <div class="cards">
+            <section id="categories" class="section categories-section">
+                <h2>Element Categories</h2>
+                <div class="card card-glow">Metals</div>
+                <div class="card card-glow">Non-metals</div>
+                <div class="card card-glow">Metalloids</div>
+                <div class="card card-glow">Noble Gases</div>
+                <div class="card card-glow">Alkali & Alkaline</div>
+                <div class="card card-glow">Rare Earth</div>
+        </div>
+    </div>
+
+
+
+
+    <div class="table-wrapper">
+
+        <section id="table" class="section table-section">
+            <h2 style="text-align:center; margin: 20px 0; color: #00ffcc;">Explore the Periodic Table</h2>
+
+            <div class="periodic-table">
+
+                <!--row 1-->
+                <div class="element non-metal" style="grid-column: 1;" data-name="Hydrogen" data-symbol="H"
+                    data-number="1" data-mass="1.008">H<br><small>1</small></div>
+
+                <div class="element noble-gas" style="grid-column: 18;" data-name="Helium" data-symbol="He"
+                    data-number="2" data-mass="4.0026">
+                    He<br><small>2</small>
+                </div>
+                <!--rwo2-->
+                <div class="element alkali-metal" style="grid-column: 1; grid-row: 2;" data-name="Lithium"
+                    data-symbol="Li" data-number="3" data-mass="6.94">Li<br><small>3</small></div>
+                <div class="element alkaline-earth-metal" style="grid-column: 2; grid-row: 2;" data-name="Beryllium"
+                    data-symbol="Be" data-number="4" data-mass="9.0122">Be<br><small>4</small></div>
+                <div class="element metalloid" style="grid-column: 13; grid-row: 2;" data-name="Boron" data-symbol="B"
+                    data-number="5" data-mass="10.81">B<br><small>5</small></div>
+                <div class="element non-metal" style="grid-column: 14; grid-row: 2;" data-name="Carbon" data-symbol="C"
+                    data-number="6" data-mass="12.011">C<br><small>6</small></div>
+                <div class="element non-metal" style="grid-column: 15; grid-row: 2;" data-name="Nitrogen"
+                    data-symbol="N" data-number="7" data-mass="14.007">N<br><small>7</small></div>
+                <div class="element non-metal" style="grid-column: 16; grid-row: 2;" data-name="Oxygen" data-symbol="O"
+                    data-number="8" data-mass="15.999">O<br><small>8</small></div>
+                <div class="element halogen" style="grid-column: 17; grid-row: 2;" data-name="Fluorine" data-symbol="F"
+                    data-number="9" data-mass="18.998">F<br><small>9</small></div>
+                <div class="element noble-gas" style="grid-column: 18; grid-row: 2;" data-name="Neon" data-symbol="Ne"
+                    data-number="10" data-mass="20.180">Ne<br><small>10</small></div>
+                <!--row3-->
+                <div class="element alkali-metal" style="grid-column: 1; grid-row: 3;" data-name="Sodium"
+                    data-symbol="Na" data-number="11" data-mass="22.990">Na<br><small>11</small></div>
+                <div class="element alkaline-earth-metal" style="grid-column: 2; grid-row: 3;" data-name="Magnesium"
+                    data-symbol="Mg" data-number="12" data-mass="24.305">Mg<br>12<small></small></div>
+                <div class="element basic-metal" style="grid-column: 13; grid-row: 3;" data-name="Aluminium"
+                    data-symbol="Al" data-number="13" data-mass="26.982">Al<br><small>13</small></div>
+                <div class="element metalloid" style="grid-column: 14; grid-row: 3;" data-name="Silicon"
+                    data-symbol="Si" data-number="14" data-mass="28.085">Si<br><small>14</small></div>
+                <div class="element non-metal" style="grid-column: 15; grid-row: 3;" data-name="Phosphorus"
+                    data-symbol="P" data-number="15" data-mass="30.974">P<br><small>15</small></div>
+                <div class="element non-metal" style="grid-column: 16; grid-row: 3;" data-name="Sulphur" data-symbol="S"
+                    data-number="16" data-mass="32.06">S<br><small>16</small></div>
+                <div class="element halogen" style="grid-column: 17; grid-row: 3;" data-name="Chlorine" data-symbol="Cl"
+                    data-number="17" data-mass="35.45">Cl<br><small>17</small></div>
+                <div class="element noble-gas" style="grid-column: 18; grid-row: 3;" data-name="Argon" data-symbol="Ar"
+                    data-number="18" data-mass="39.948">Ar<br><small>18</small></div>
+                <!--row4-->
+                <div class="element alkali-metal" style="grid-column: 1; grid-row: 4;" data-name="Potassium"
+                    data-symbol="K" data-number="19" data-mass="39.098">K<br><small>19</small></div>
+                <div class="element alkaline-earth-metal" style="grid-column: 2; grid-row: 4;" data-name="Calcium"
+                    data-symbol="Ca" data-number="20" data-mass="40.078">Ca<br>20<small></small></div>
+                <!-- Transition Metals -->
+                <div class="element transition-metal" style="grid-column: 3; grid-row:4" data-name="Scandium"
+                    data-symbol="Sc" data-number="21" data-mass="44.956">Sc<br><small>21</small></div>
+                <div class="element transition-metal" style="grid-column: 4; grid-row:4" data-name="Titanium"
+                    data-symbol="Ti" data-number="22" data-mass="47.867">Ti<br><small>22</small></div>
+                <div class="element transition-metal" style="grid-column: 5; grid-row:4" data-name="Vanadium"
+                    data-symbol="V" data-number="23" data-mass="50.942">V<br><small>23</small></div>
+                <div class="element transition-metal" style="grid-column: 6; grid-row:4" data-name="Chromium"
+                    data-symbol="Cr" data-number="23" data-mass="51.996">Cr<br><small>24</small></div>
+                <div class="element transition-metal" style="grid-column: 7; grid-row:4" data-name="Manganese"
+                    data-symbol="Mn" data-number="25" data-mass="54.938">Mn<br><small>25</small></div>
+                <div class="element transition-metal" style="grid-column: 8; grid-row:4" data-name="Iron"
+                    data-symbol="Fe" data-number="26" data-mass="55.845">Fe<br><small>26</small></div>
+                <div class="element transition-metal" style="grid-column: 9; grid-row:4" data-name="Cobalt"
+                    data-symbol="Co" data-number="27" data-mass="58.933">Co<br><small>27</small></div>
+                <div class="element transition-metal" style="grid-column: 10; grid-row:4" data-name="Nickel"
+                    data-symbol="Ni" data-number="28" data-mass="58.693">Ni<br><small>28</small></div>
+                <div class="element transition-metal" style="grid-column: 11; grid-row:4" data-name="Copper"
+                    data-symbol="Cu" data-number="29" data-mass="63.546">Cu<br><small>29</small></div>
+                <div class="element transition-metal" style="grid-column: 12; grid-row:4" data-name="Zinc"
+                    data-symbol="Zn" data-number="30" data-mass="65.38">Zn<br><small>30</small></div>
+                <div class="element basic-metal" style="grid-column: 13; grid-row:4" data-name="Gallium"
+                    data-symbol="Ga" data-number="31" data-mass="69.723">Ga<br><small>31</small></div>
+                <div class="element metalloid" style="grid-column: 14; grid-row:4" data-name="Germanium"
+                    data-symbol="Ge" data-number="32" data-mass="72.638">Ge<br><small>32</small></div>
+                <div class="element metalloid" style="grid-column: 15; grid-row:4" data-name="Arsenic" data-symbol="As"
+                    data-number="33" data-mass="74.922">As<br><small>33</small></div>
+                <div class="element non-metal" style="grid-column: 16; grid-row:4" data-name="Selenium" data-symbol="Se"
+                    data-number="34" data-mass="78.971">Se<br><small>34</small></div>
+                <div class="element halogen" style="grid-column: 17; grid-row:4" data-name="Bromine" data-symbol="Br"
+                    data-number="35" data-mass="79.904">Br<br><small>35</small></div>
+                <div class="element noble-gas" style="grid-column: 18; grid-row:4" data-name="Krypton" data-symbol="Kr"
+                    data-number="36" data-mass="83.798">Kr<br><small>36</small></div>
+                <!--row5-->
+                <div class="element alkali-metal" style="grid-column: 1; grid-row:5" data-name="Rubidium"
+                    data-symbol="Rb" data-number="37" data-mass="85.468">Rb<br><small>37</small></div>
+                <div class="element alkaline-earth-metal" style="grid-column: 2; grid-row:5" data-name="Strontium"
+                    data-symbol="Sr" data-number="38" data-mass="87.62">Sr<br><small>38</small></div>
+                <div class="element transition-metal" style="grid-column: 3; grid-row:5" data-name="Yttrium"
+                    data-symbol="Y" data-number="39" data-mass="88.906">Y<br><small>39</small></div>
+                <div class="element transition-metal" style="grid-column: 4; grid-row:5" data-name="Zirconium"
+                    data-symbol="Zr" data-number="40" data-mass="91.224">Zr<br><small>40</small></div>
+                <div class="element transition-metal" style="grid-column: 5; grid-row:5" data-name="Niobium"
+                    data-symbol="Nb" data-number="41" data-mass="92.906">Nb<br><small>41</small></div>
+                <div class="element transition-metal" style="grid-column: 6; grid-row:5" data-name="Molybdenum"
+                    data-symbol="Mo" data-number="42" data-mass="95.95">Mo<br><small>42</small></div>
+                <div class="element transition-metal" style="grid-column: 7; grid-row:5" data-name="Technetium"
+                    data-symbol="Tc" data-number="43" data-mass="[98]">Tc<br><small>43</small></div>
+                <div class="element transition-metal" style="grid-column: 8; grid-row:5" data-name="Ruthenium"
+                    data-symbol="Ru" data-number="44" data-mass="101.07">Ru<br><small>44</small></div>
+                <div class="element transition-metal" style="grid-column: 9; grid-row:5" data-name="Rhodium"
+                    data-symbol="Rh" data-number="45" data-mass="102.91">Rh<br><small>45</small></div>
+                <div class="element transition-metal" style="grid-column: 10; grid-row:5" data-name="Palladium"
+                    data-symbol="Pd" data-number="46" data-mass="106.42">Pd<br><small>46</small></div>
+                <div class="element transition-metal" style="grid-column: 11; grid-row:5" data-name="Silver"
+                    data-symbol="Ag" data-number="47" data-mass="107.87">Ag<br><small>47</small></div>
+                <div class="element transition-metal" style="grid-column: 12; grid-row:5" data-name="Cadmium"
+                    data-symbol="Cd" data-number="112.41" data-mass="112.41">Cd<br><small>48</small></div>
+                <div class="element basic-metal" style="grid-column: 13; grid-row:5" data-name="Indium" data-symbol="In"
+                    data-number="49" data-mass="114.82">In<br><small>49</small></div>
+                <div class="element basic-metal" style="grid-column: 14; grid-row:5" data-name="Tin" data-symbol="Sn"
+                    data-number="50" data-mass="118.71">Sn<br><small>50</small></div>
+                <div class="element metalloid" style="grid-column: 15; grid-row:5" data-name="Antimony" data-symbol="Sb"
+                    data-number="51" data-mass="121.76">Sb<br><small>51</small></div>
+                <div class="element metalloid" style="grid-column: 16; grid-row:5" data-name="Tellurium"
+                    data-symbol="Te" data-number="52" data-mass="127.60">Te<br><small>52</small></div>
+                <div class="element halogen" style="grid-column: 17; grid-row:5" data-name="Iodine" data-symbol="I"
+                    data-number="53" data-mass="126.90">I<br><small>53</small></div>
+                <div class="element noble-gas" style="grid-column: 18; grid-row:5" data-name="Xenon" data-symbol="Xe"
+                    data-number="54" data-mass="131.29">Xe<br><small>54</small></div>
+                <!--row6-->
+                <div class="element alkali-metal" style="grid-column: 1; grid-row:6" data-name="Caesium"
+                    data-symbol="Cs" data-number="55" data-mass="132.91">Cs<br><small>55</small></div>
+                <div class="element alkaline-earth-metal" style="grid-column: 2; grid-row:6" data-name="Barium"
+                    data-symbol="Ba" data-number="56" data-mass="137.33">Ba<br><small>56</small></div>
+                <div class="element lanthanide" style="grid-column: 3; grid-row:6"><br><small>57-71</small></div>
+                <div class="element transition-metal" style="grid-column: 4; grid-row:6" data-name="Hafnium"
+                    data-symbol="Hf" data-number="72" data-mass="178.49">Hf<br><small>72</small></div>
+                <div class="element transition-metal" style="grid-column: 5; grid-row:6" data-name="Tantalum"
+                    data-symbol="Ta" data-number="73" data-mass="180.95">Ta<br><small>73</small></div>
+                <div class="element transition-metal" style="grid-column: 6; grid-row:6" data-name="Tungsten"
+                    data-symbol="W" data-number="74" data-mass="183.84">W<br><small>74</small></div>
+                <div class="element transition-metal" style="grid-column: 7; grid-row:6" data-name="Rhenium"
+                    data-symbol="Re" data-number="75" data-mass="186.21">Re<br><small>75</small></div>
+                <div class="element transition-metal" style="grid-column: 8; grid-row:6" data-name="Osmium"
+                    data-symbol="Os" data-number="76" data-mass="190.23">Os<br><small>76</small></div>
+                <div class="element transition-metal" style="grid-column: 9; grid-row:6" data-name="Iridium"
+                    data-symbol="Ir" data-number="77" data-mass="192.22">Ir<br><small>77</small></div>
+                <div class="element transition-metal" style="grid-column: 10; grid-row:6" data-name="Platinum"
+                    data-symbol="Pt" data-number="78" data-mass="195.08">Pt<br><small>78</small></div>
+                <div class="element transition-metal" style="grid-column: 11; grid-row:6" data-name="Gold"
+                    data-symbol="Au" data-number="79" data-mass="196.97">Au<br><small>79</small></div>
+                <div class="element transition-metal" style="grid-column: 12; grid-row:6" data-name="Mercury"
+                    data-symbol="Hg" data-number="80" data-mass="200.59">Hg<br><small>80</small></div>
+                <div class="element basic-metal" style="grid-column: 13; grid-row:6" data-name="Thallium"
+                    data-symbol="Tl" data-number="81" data-mass="204.38">Tl<br><small>81</small></div>
+                <div class="element basic-metal" style="grid-column: 14; grid-row:6" data-name="Lead" data-symbol="Pb"
+                    data-number="82" data-mass="207.2">Pb<br><small>82</small></div>
+                <div class="element basic-metal" style="grid-column: 15; grid-row:6" data-name="Bismuth"
+                    data-symbol="Bi" data-number="83" data-mass="208.98">Bi<br><small>83</small></div>
+                <div class="element metalloid" style="grid-column: 16; grid-row:6" data-name="Polonium" data-symbol="Po"
+                    data-number="84" data-mass="[209]">Po<br><small>84</small></div>
+                <div class="element halogen" style="grid-column: 17; grid-row:6" data-name="Astatine" data-symbol="At"
+                    data-number="85" data-mass="[210]">At<br><small>85</small></div>
+                <div class="element noble-gas" style="grid-column: 18; grid-row:6" data-name="Radon" data-symbol="Rn"
+                    data-number="86" data-mass="[222]">Rn<br><small>86</small></div>
+                <!--row7-->
+                <div class="element alkali-metal" style="grid-column: 1; grid-row:7" data-name="Francium"
+                    data-symbol="Fr" data-number="87" data-mass="[223]">Fr<br><small>87</small></div>
+                <div class="element alkaline-earth-metal" style="grid-column: 2; grid-row:7" data-name="Radium"
+                    data-symbol="Ra" data-number="88" data-mass="[226]">Ra<br><small>88</small></div>
+                <div class="element actinide" style="grid-column: 3; grid-row:7"><br><small>89-103</small></div>
+                <div class="element transition-metal" style="grid-column: 4; grid-row:7" data-name="Rutherfordium"
+                    data-symbol="Rf" data-number="104" data-mass="[267]">Rf<br><small>104</small></div>
+                <div class="element transition-metal" style="grid-column: 5; grid-row:7" data-name="Dubnium"
+                    data-symbol="Db" data-number="105" data-mass="[268]">Db<br><small>105</small></div>
+                <div class="element transition-metal" style="grid-column: 6; grid-row:7" data-name="Seaborgium"
+                    data-symbol="Sg" data-number="106" data-mass="[269]">Sg<br><small>106</small></div>
+                <div class="element transition-metal" style="grid-column: 7; grid-row:7" data-name="Bohrium"
+                    data-symbol="Bh" data-number="107" data-mass="[270]">Bh<br><small>107</small></div>
+                <div class="element transition-metal" style="grid-column: 8; grid-row:7" data-name="Hassium"
+                    data-symbol="Hs" data-number="108" data-mass="[277]">Hs<br><small>108</small></div>
+                <div class="element transition-metal" style="grid-column: 9; grid-row:7" data-name="Meitnerium"
+                    data-symbol="Mt" data-number="109" data-mass="[278]">Mt<br><small>109</small></div>
+                <div class="element transition-metal" style="grid-column: 10; grid-row:7" data-name="Darmstadtium"
+                    data-symbol="Ds" data-number="110" data-mass="[281]">Ds<br><small>110</small></div>
+                <div class="element transition-metal" style="grid-column: 11; grid-row:7" data-name="Roentgenium"
+                    data-symbol="Rg" data-number="111" data-mass="[282]">Rg<br><small>111</small></div>
+                <div class="element transition-metal" style="grid-column: 12; grid-row:7" data-name="Copernicium"
+                    data-symbol="Cn" data-number="112" data-mass="[285]">Cn<br><small>112</small></div>
+                <div class="element basic-metal" style="grid-column: 13; grid-row:7" data-name="Nihonium"
+                    data-symbol="Nh" data-number="113" data-mass="[286]">Nh<br><small>113</small></div>
+                <div class="element basic-metal" style="grid-column: 14; grid-row:7" data-name="Flerovium"
+                    data-symbol="Fl" data-number="114" data-mass="[289]">Fl<br><small>114</small></div>
+                <div class="element basic-metal" style="grid-column: 15; grid-row:7" data-name="Moscovium"
+                    data-symbol="Mc" data-number="115" data-mass="[290]">Mc<br><small>115</small></div>
+                <div class="element basic-metal" style="grid-column: 16; grid-row:7" data-name="Livermorium"
+                    data-symbol="Lv" data-number="116" data-mass="[293]">Lv<br><small>116</small></div>
+                <div class="element halogen" style="grid-column: 17; grid-row:7" data-name="Tennessine" data-symbol="Ts"
+                    data-number="117" data-mass="[294]">Ts<br><small>117</small></div>
+                <div class="element noble-gas" style="grid-column: 18; grid-row:7" data-name="Oganesson"
+                    data-symbol="Og" data-number="118" data-mass="[294]">Og<br><small>118</small></div>
+
+
+                <div class="element lanthanide" style="grid-column: 3; grid-row:8" data-name="Lanthanum"
+                    data-symbol="La" data-number="57" data-mass="138.91">La<br><small>57</small></div>
+                <div class="element lanthanide" style="grid-column: 4; grid-row:8" data-name="Cerium" data-symbol="Ce"
+                    data-number="58" data-mass="140.12">Ce<br><small>58</small></div>
+                <div class="element lanthanide" style="grid-column: 5; grid-row:8" data-name="Praseodymium"
+                    data-symbol="Pr" data-number="59" data-mass="140.91">Pr<br><small>59</small></div>
+                <div class="element lanthanide" style="grid-column: 6; grid-row:8" data-name="Neodymium"
+                    data-symbol="Nd" data-number="60" data-mass="144.25">Nd<br><small>60</small></div>
+                <div class="element lanthanide" style="grid-column: 7; grid-row:8" data-name="Promethium"
+                    data-symbol="Pm" data-number="61" data-mass="[145]">Pm<br><small>61</small></div>
+                <div class="element lanthanide" style="grid-column: 8; grid-row:8" data-name="Samarium" data-symbol="Sm"
+                    data-number="62" data-mass="150.36">Sm<br><small>62</small></div>
+                <div class="element lanthanide" style="grid-column: 9; grid-row:8" data-name="Europium" data-symbol="Eu"
+                    data-number="63" data-mass="151.96">Eu<br><small>63</small></div>
+                <div class="element lanthanide" style="grid-column: 10; grid-row:8" data-name="Gadolinium"
+                    data-symbol="Gd" data-number="64" data-mass="157.25">Gd<br><small>64</small></div>
+                <div class="element lanthanide" style="grid-column: 11; grid-row:8" data-name="Terbium" data-symbol="Tb"
+                    data-number="65" data-mass="158.93">Tb<br><small>65</small></div>
+                <div class="element lanthanide" style="grid-column: 12; grid-row:8" data-name="Dysprosium"
+                    data-symbol="Dy" data-number="66" data-mass="162.50">Dy<br><small>66</small></div>
+                <div class="element lanthanide" style="grid-column: 13; grid-row:8" data-name="Holmium" data-symbol="Ho"
+                    data-number="67" data-mass="164.93">Ho<br><small>67</small></div>
+                <div class="element lanthanide" style="grid-column: 14; grid-row:8" data-name="Erbium" data-symbol="Er"
+                    data-number="68" data-mass="167.26">Er<br><small>68</small></div>
+                <div class="element lanthanide" style="grid-column: 15; grid-row:8" data-name="Thulium" data-symbol="Tm"
+                    data-number="69" data-mass="168.93">Tm<br><small>69</small></div>
+                <div class="element lanthanide" style="grid-column: 16; grid-row:8" data-name="Ytterbium"
+                    data-symbol="Yb" data-number="70" data-mass="173.05">Yb<br><small>70</small></div>
+                <div class="element lanthanide" style="grid-column: 17; grid-row:8" data-name="Lutetium"
+                    data-symbol="Lu" data-number="71" data-mass="174.97">Lu<br><small>71</small></div>
+
+                <div class="element actinide" style="grid-column: 3; grid-row:9" data-name="Actinium" data-symbol="Ac"
+                    data-number="89" data-mass="227">Ac<br><small>89</small></div>
+                <div class="element actinide" style="grid-column: 4; grid-row:9" data-name="Thorium" data-symbol="Th"
+                    data-number="90" data-mass="232.04">Th<br><small>90</small></div>
+                <div class="element actinide" style="grid-column: 5; grid-row:9" data-name="Protactinium"
+                    data-symbol="Pa" data-number="91" data-mass="231.04">Pa<br><small>91</small></div>
+                <div class="element actinide" style="grid-column: 6; grid-row:9" data-name="Uranium" data-symbol="U"
+                    data-number="92" data-mass="238.03">U<br><small>92</small></div>
+                <div class="element actinide" style="grid-column: 7; grid-row:9" data-name="Neptunium" data-symbol="Np"
+                    data-number="93" data-mass="[237]">Np<br><small>93</small></div>
+                <div class="element actinide" style="grid-column: 8; grid-row:9" data-name="Plutonium" data-symbol="Pu"
+                    data-number="94" data-mass="[244]">Pu<br><small>94</small></div>
+                <div class="element actinide" style="grid-column: 9; grid-row:9" data-name="Americium" data-symbol="Am"
+                    data-number="95" data-mass="[243]">Am<br><small>95</small></div>
+                <div class="element actinide" style="grid-column: 10; grid-row:9" data-name="Curium" data-symbol="Cm"
+                    data-number="96" data-mass="[247]">Cm<br><small>96</small></div>
+                <div class="element actinide" style="grid-column: 11; grid-row:9" data-name="Berkelium" data-symbol="Bk"
+                    data-number="97" data-mass="[247]">Bk<br><small>97</small></div>
+                <div class="element actinide" style="grid-column: 12; grid-row:9" data-name="Californium"
+                    data-symbol="Cf" data-number="98" data-mass="[251]">Cf<br><small>98</small></div>
+                <div class="element actinide" style="grid-column: 13; grid-row:9" data-name="Einsteinium"
+                    data-symbol="Es" data-number="99" data-mass="[252]">Es<br><small>99</small></div>
+                <div class="element actinide" style="grid-column: 14; grid-row:9" data-name="Fermium" data-symbol="Fm"
+                    data-number="100" data-mass="[257]">Fm<br><small>100</small></div>
+                <div class="element actinide" style="grid-column: 15; grid-row:9" data-name="Mendelevium"
+                    data-symbol="Md" data-number="101" data-mass="[258]">Md<br><small>101</small></div>
+                <div class="element actinide" style="grid-column: 16; grid-row:9" data-name="Nobelium" data-symbol="Mo"
+                    data-number="102" data-mass="[259]">No<br><small>102</small></div>
+                <div class="element actinide" style="grid-column: 17; grid-row:9" data-name="Lawrencium"
+                    data-symbol="Lr" data-number="103" data-mass="[262]">Lr<br><small>103</small></div>
+            </div>
+
+            <section id="introduction-section" class="concept-section">
+                <div class="concept-header">
+                    <h2>Introduction to the Periodic Table</h2>
+                    <p>
+                        The Periodic Table is like a map for all known chemical elements. It's a powerful tool that
+                        helps scientists
+                        understand how elements behave, react, and bond.
+                    </p>
+                </div>
+
+                <div class="concept-subsection">
+                    <h3>Why Was the Periodic Table Needed?</h3>
+                    <p>
+                        Before the table, elements were known but unorganized. Scientists wanted a way to classify
+                        elements in a way
+                        that made predictions possible. That’s where Mendeleev came in!
+                    </p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>1869 – Mendeleev's Table</h3>
+                            <p>He arranged 63 known elements by increasing atomic mass and left gaps for undiscovered
+                                ones.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>1913 – Henry Moseley</h3>
+                            <p>He discovered atomic number and gave the table its modern form, correcting mismatches in
+                                Mendeleev’s layout.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-subsection">
+                    <h3>Understanding the Structure</h3>
+                    <ul>
+                        <li><strong>Periods:</strong> Horizontal rows (1 to 7) – represent energy levels or shells.</li>
+                        <br>
+                        <li><strong>Groups:</strong> Vertical columns (1 to 18) – elements share similar valence
+                            electrons.</li><br>
+                        <li><strong>Blocks:</strong> s, p, d, f blocks - based on the type of atomic orbital being
+                            filled.</li><br>
+                    </ul>
+                </div>
+
+                <div class="concept-subsection">
+                    <h3>What is the Periodic Law?</h3>
+                    <p>
+                        It states: <em>“The properties of elements are periodic functions of their atomic numbers.”</em>
+                        That means, if you line up elements by atomic number, similar patterns appear again and again.
+                    </p>
+                </div>
+
+                <div class="concept-subsection">
+                    <h3>How to Read the Table</h3>
+                    <p>
+                        Each box shows an element with its symbol, atomic number, and mass. The location tells you about
+                        the
+                        element’s size, reactivity, and electron configuration.
+                    </p>
+                </div>
+
+                <div class="concept-subsection fun-facts">
+                    <h3>Fun Facts</h3>
+                    <ul>
+                        <li>Hydrogen is unique – it fits in Group 1 and 17!</li><br>
+                        <li>The Lanthanides and Actinides are placed separately to keep the table compact.</li><br>
+                        <li>Noble gases were discovered after Mendeleev's table and didn’t fit into his version!</li>
+                        <br>
+                        <li>There are still <strong>synthetic elements</strong> that don't exist naturally!</li><br>
+                    </ul>
+                </div>
+
+                <div class="concept-subsection tip-box">
+                    <h3>Student Tip:</h3>
+                    <p>
+                        Don't memorize the entire table — focus on patterns! Like how elements in the same group behave
+                        similarly.
+                        This helps in chemical reactions and equation predictions.
+                    </p>
+                </div>
+            </section>
+            <section id="periodic-trends-section" class="concept-section">
+                <div class="concept-header">
+                    <h2>Periodic Trends in the Periodic Table</h2>
+                    <p>
+                        Periodic trends are patterns in element properties across periods and groups in the table. These
+                        trends help predict chemical behavior.
+                    </p>
+                </div>
+
+                <div class="trend-box">
+                    <h3>Atomic Radius</h3>
+                    <p>
+                        Atomic size decreases across a period (→) due to increased nuclear charge and increases down a
+                        group (↓) due to added energy levels.
+                    </p>
+                    <div class="trend-arrow">
+                        <span class="arrow horizontal">← Decreases across period</span>
+                        <span class="arrow vertical">Increases ↓ down group</span>
+                    </div>
+                </div>
+
+                <div class="trend-box">
+                    <h3>Ionization Energy</h3>
+                    <p>
+                        Energy required to remove an electron. It increases across a period and decreases down a group.
+                    </p>
+                    <div class="trend-arrow">
+                        <span class="arrow horizontal">→ Increases across period</span>
+                        <span class="arrow vertical">Decreases ↓ down group</span>
+                    </div>
+                </div>
+
+                <div class="trend-box">
+                    <h3>Electronegativity</h3>
+                    <p>
+                        Tendency of an atom to attract electrons. Increases across a period and decreases down a group.
+                        Fluorine is the most electronegative element!
+                    </p>
+                    <div class="trend-arrow">
+                        <span class="arrow horizontal">→ Increases across period</span>
+                        <span class="arrow vertical">Decreases ↓ down group</span>
+                    </div>
+                </div>
+
+                <div class="trend-box">
+                    <h3>Metallic Character</h3>
+                    <p>
+                        Tendency to lose electrons. Increases down a group and decreases across a period.
+                    </p>
+                    <div class="trend-arrow">
+                        <span class="arrow horizontal">← Increases to left</span>
+                        <span class="arrow vertical">Increases ↓ down group</span>
+                    </div>
+                </div>
+            </section>
+
+
+        </section>
+        <section class="block-info-section">
+            <h2>Understanding Periodic Table Blocks</h2>
+            <p>The periodic table is divided into blocks based on the electron configuration of elements. These blocks —
+                s, p, d, and f — help group elements with similar properties.</p>
+
+            <div class="block-info-cards">
+                <div class="block-card s-block">
+                    <h3>s-block</h3>
+                    <p>Includes Group 1 & 2 ,alkali and alkaline earth metals.<br>
+
+                        Electron fills in f orbital<br>
+                        Mostly radioactive (Actinides)<br>
+                        Used in high-tech industries<br>
+                        Ex: Uranium, Cerium<br>
+                    </p>
+
+                </div>
+                <div class="block-card p-block">
+                    <h3>p-block</h3>
+                    <p>Groups 13 to 18. Contains metals, nonmetals, metalloids, and noble gases. Electrons fill the p
+                        orbital.
+                        Contains metals, metalloids, and non-metals<br>
+                        Electron fills in p orbital<br>
+                        Includes Noble gases and Halogens<br>
+                        Ex: Carbon, Oxygen, Fluorine<br>
+                    </p>
+                </div>
+                <div class="block-card d-block">
+                    <h3>d-block</h3>
+                    <p>Transition metals. Found in the center of the table (Groups 3–12). Their d orbitals are being
+                        filled.
+                        Hard, dense metals with high melting points<br>
+                        Electron fills in d orbital<br>
+                        Often show variable oxidation states<br>
+                        Ex: Iron, Copper, Zinc<br>
+                    </p>
+                </div>
+                <div class="block-card f-block">
+                    <h3>f-block</h3>
+                    <p>Lanthanides and actinides. These elements fill the f orbitals and are placed separately at the
+                        bottom.
+
+                        Electron fills in f orbital<br>
+                        Mostly radioactive (Actinides)<br>
+                        Used in high-tech industries<br>
+                        Ex: Uranium, Cerium<br>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="timeline" class="timeline-section">
+            <h2>Discovery Timeline of Periodic Table Blocks</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">1735 - 1807</div>
+                    <div class="timeline-content">
+                        <h4>s-block</h4>
+                        <p>Elements like Hydrogen, Lithium, and Sodium were among the earliest discovered due to their
+                            high reactivity and abundance.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">1808 - 1900</div>
+                    <div class="timeline-content">
+                        <h4>p-block</h4>
+                        <p>Non-metals and noble gases like Oxygen, Nitrogen, and Neon were isolated and identified
+                            during this time.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">1790s - 1920s</div>
+                    <div class="timeline-content">
+                        <h4>d-block</h4>
+                        <p>Transition metals like Iron, Copper, and Zinc were known since ancient times, but formally
+                            studied during this period.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">1900 - 1940+</div>
+                    <div class="timeline-content">
+                        <h4>f-block</h4>
+                        <p>Lanthanides and actinides like Uranium and Plutonium were discovered during the 20th century,
+                            often with complex isolation processes.</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+                <section id="electronic-configuration" class="concept-section">
+                    <div class="concept-header">
+                        <h2>Electronic Configuration & Orbitals</h2>
+                        <p>
+                            Electronic configuration describes how electrons are arranged in an atom's orbitals. This
+                            determines an element's chemical behavior and position in the periodic table.
+                        </p>
+                    </div>
+
+                    <div class="orbital-rules">
+                        <h3>Rules for Filling Orbitals</h3>
+                        <ul>
+                            <li><strong>Aufbau Principle:</strong> Electrons occupy the lowest energy orbitals first.
+                            </li><br>
+                            <li><strong>Pauli Exclusion Principle:</strong> No two electrons can have the same set of
+                                quantum numbers.</li><br>
+                            <li><strong>Hund's Rule:</strong> Electrons occupy orbitals singly before pairing up.</li>
+                            <br>
+                        </ul>
+                    </div>
+
+                    <div class="orbital-diagram">
+                        <h3>Aufbau Order Diagram</h3>
+                        <img src="afabua.jpg" alt="Aufbau Diagram" class="aufbau-img" />
+                    </div>
+
+                    <div class="config-example">
+                        <h3>Examples of Configurations</h3>
+                        <ul>
+                            <li><strong>Hydrogen (1):</strong> 1s¹</li>
+                            <li><strong>Carbon (6):</strong> 1s² 2s² 2p²</li>
+                            <li><strong>Iron (26):</strong> [Ar] 4s² 3d⁶</li>
+                            <li><strong>Uranium (92):</strong> [Rn] 7s² 5f⁴ 6d¹</li>
+                        </ul>
+                    </div>                   
+                </section>
+                <section class="sub-orbits">
+                    <h2>Subshells and Orbitals</h2>
+                    <p>
+                        Subshells are divisions of electron shells, each containing orbitals where electrons reside.
+                        The main subshells are s, p, d, and f.
+                    </p>
+
+                    <div class="subshells">
+                        <div class="subshell s-orbital">
+                            <h3>s Orbital</h3>
+                            <p>Shape: Spherical<br>Max Electrons: 2</p>
+                            <img src="sorbit.png">
+                        </div>
+                        <div class="subshell p-orbital">
+                            <h3>p Orbital</h3>
+                            <p>Shape: Dumbbell<br>Max Electrons: 6</p>
+                            <img src="porbit.png">
+                        </div>
+                        <div class="subshell d-orbital">
+                            <h3>d Orbital</h3>
+                            <p>Shape: Double Dumbbell<br>Max Electrons: 10</p>
+                            <img src="porbit.png">
+                        </div>
+                        <div class="subshell f-orbital">
+                            <h3>f Orbital</h3>
+                            <p>Shape: Complex<br>Max Electrons: 14</p>
+                        </div>
+                    </div>
+
+                </section>
+
+        <section id="shell-info-flip" class="info-section">
+            <h2 class="section-title">Interactive Electron Shell Cards</h2>
+
+            <div class="flip-card-container">
+
+                <!-- K Shell -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>K Shell</h3>
+                            <p>1st Shell</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>K Shell</h3>
+                            <p><strong>Capacity:</strong> 2 electrons</p>
+                            <p><strong>Subshells:</strong> 1s</p>
+                            <p><strong>Examples:</strong> H, He</p>
+                            <p> <b>Closest to the nucleu.</b><br>
+                                <b>Tightly bound electron.</b><br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- L Shell -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>L Shell</h3>
+                            <p>2nd Shell</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3> L Shell</h3>
+                            <p><strong>Capacity:</strong> 8 electrons</p>
+                            <p><strong>Subshells:</strong> 2s, 2p</p>
+                            <p><strong>Examples:</strong> Li, Ne</p>
+                            <p>
+                                <b>
+                                    Defines valence in light elements<br>
+                                    Important in chemical bonding<br>
+                                </b>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- M Shell -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>M Shell</h3>
+                            <p>3rd Shell</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>M Shell</h3>
+                            <p><strong>Capacity:</strong> 18 electrons</p>
+                            <p><strong>Subshells:</strong> 3s, 3p, 3d</p>
+                            <p><strong>Examples:</strong> Na, Ar, Sc</p>
+                            <p><b>Starts including d orbitals<br>
+                                    In transition metals</b><br></p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- N Shell -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>N Shell</h3>
+                            <p>4th Shell</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>N Shell</h3>
+                            <p><strong>Capacity:</strong> 32 electrons</p>
+                            <p><strong>Subshells:</strong> 4s, 4p, 4d, 4f</p>
+                            <p><strong>Examples:</strong> K, Kr, Ce</p>
+                            <p><b>Contains transition & lanthanides<br>
+                                    Important for magnetic properties</b><br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- O Shell -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>O Shell</h3>
+                            <p>5th Shell</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>O Shell</h3>
+                            <p><strong>Capacity:</strong> 50 electrons</p>
+                            <p><strong>Subshells:</strong> 5s, 5p, 5d, 5f</p>
+                            <p><strong>Examples:</strong> Rb, Ba, U</p>
+
+                            <p><b>Complex bonding in heavy elements<br>
+                                    Used in radioactive and rare earths</b><br></p>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- P Shell -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>P Shell</h3>
+                            <p>6th Shell</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>P Shell</h3>
+                            <p><strong>Capacity:</strong> 72 electrons</p>
+                            <p><strong>Subshells:</strong> 6s, 6p, 6d</p>
+                            <p><strong>Examples:</strong> Cs, Bi</p>
+                            <p>
+                                <b>Occurs in actinides<br>
+                                    Rare in everyday elements</b><br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q Shell -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3>Q Shell</h3>
+                            <p>7th Shell</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Q Shell</h3>
+                            <p><strong>Capacity:</strong> 98 electrons</p>
+                            <p><strong>Subshells:</strong> 7s, 7p, 7d</p>
+                            <p><strong>Examples:</strong> Fr, Og</p>
+                            <p>
+                                <b>Top of periodic limit<br>
+                                    Used in theoretical studies</b><br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="main-shells" class="shell-visuals-section">
+            <h2>Atomic Shells: K, L, M, N</h2>
+            <div class="shell-visual">
+                <svg viewBox="0 0 400 400" class="shell-svg">
+                    <!-- Shells -->
+                    <circle cx="200" cy="200" r="40" stroke="#00ffff" stroke-width="2" fill="none" />
+                    <circle cx="200" cy="200" r="70" stroke="#00ff99" stroke-width="2" fill="none" />
+                    <circle cx="200" cy="200" r="100" stroke="#ffaa00" stroke-width="2" fill="none" />
+                    <circle cx="200" cy="200" r="130" stroke="#ff0077" stroke-width="2" fill="none" />
+
+                    <!-- Shell Labels -->
+                    <text x="200" y="160" fill="#00ffff" font-size="14" text-anchor="middle">K</text>
+                    <text x="200" y="130" fill="#00ff99" font-size="14" text-anchor="middle">L</text>
+                    <text x="200" y="100" fill="#ffaa00" font-size="14" text-anchor="middle">M</text>
+                    <text x="200" y="70" fill="#ff0077" font-size="14" text-anchor="middle">N</text>
+
+                    <!-- Electrons -->
+                    <!-- K shell -->
+                    <circle r="5" fill="#00ffff">
+                        <animateMotion dur="4s" repeatCount="indefinite">
+                            <mpath href="#k-path" />
+                        </animateMotion>
+                    </circle>
+                    <!-- L shell -->
+                    <circle r="5" fill="#00ff99">
+                        <animateMotion dur="5s" repeatCount="indefinite">
+                            <mpath href="#l-path" />
+                        </animateMotion>
+                    </circle>
+                    <!-- M shell -->
+                    <circle r="5" fill="#ffaa00">
+                        <animateMotion dur="6s" repeatCount="indefinite">
+                            <mpath href="#m-path" />
+                        </animateMotion>
+                    </circle>
+                    <!-- N shell -->
+                    <circle r="5" fill="#ff0077">
+                        <animateMotion dur="7s" repeatCount="indefinite">
+                            <mpath href="#n-path" />
+                        </animateMotion>
+                    </circle>
+
+                    <!-- Electron Paths -->
+                    <path id="k-path" d="M200,160 A40,40 0 1,1 199.9,160" fill="none" />
+                    <path id="l-path" d="M200,130 A70,70 0 1,1 199.9,130" fill="none" />
+                    <path id="m-path" d="M200,100 A100,100 0 1,1 199.9,100" fill="none" />
+                    <path id="n-path" d="M200,70 A130,130 0 1,1 199.9,70" fill="none" />
+                </svg>
+            </div>
+        </section>
+
+
+        <section id="mindmaps" class="mindmap-section">
+            <h2>Periodic Table Mind Maps</h2>
+            <p>Click to view mind maps! !</p>
+            <div class="mindmap-gallery">
+                <img src="sblock.png" alt="S-Block" class="mindmap-thumb" onclick="openPopup(this.src)">
+                <img src="pblock.png" alt="P-Block" class="mindmap-thumb" onclick="openPopup(this.src)">
+                <img src="dblock.png" alt="D-Block" class="mindmap-thumb" onclick="openPopup(this.src)">
+                <img src="fblock.png" alt="F-Block" class="mindmap-thumb" onclick="openPopup(this.src)">
+            </div>
+
+            <!-- Popup viewer -->
+            <div id="popup" class="popup hidden" onclick="closePopup()">
+                <img id="popup-img" src="" alt="Full-size Mindmap">
+            </div>
+        </section>
+    </div>
+    <div id="tooltip" class="tooltip hidden"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
