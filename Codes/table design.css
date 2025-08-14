@@ -2,6 +2,9 @@ html {
   scroll-behavior: smooth;
 }
 
+/* -----------------------
+    Body styles
+------------------------ */
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -17,6 +20,10 @@ body {
   margin-top: 30px;
   font-size: 30px;
 }
+
+/* -----------------------
+    Navigation styles
+------------------------ */
 
 .navbar {
   position: sticky;
@@ -67,6 +74,9 @@ body {
   width: 100%;
 }
 
+/* -----------------------
+    Home Section styles
+------------------------ */
 .home-section {
   padding: 4rem 2rem;
   text-align: center;
@@ -114,6 +124,9 @@ body {
   color: #ccc;
 }
 
+/*-----------------
+  Categories Section Styles
+-----------------*/
 .categories-section h2 {
   text-align: center;
   margin-bottom: 20px;
@@ -263,7 +276,7 @@ ul li {
 /*-------------------------------
     sidebar styles
 ---------------------------------*/
-/* Sidebar Styles */
+
 .sidebar {
   position: fixed;
   left: 0;
@@ -311,7 +324,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Push main content so it doesn't hide under sidebar */
+
 body {
   margin-left: 300px;
   padding-right:20px;
@@ -325,7 +338,44 @@ section{
 }
 
 
-/* Element Categories */
+/*---------------------
+ Periodic Table
+ Element Categories 
+ ----------------------*/
+ /* Ensure horizontal scroll works */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; /* smooth scroll on mobile */
+  padding-bottom: 10px;
+}
+
+/* Make the grid wide enough for scrolling */
+.table-wrapper .periodic-table {
+  display: grid;
+  grid-template-columns: repeat(18, minmax(60px, 1fr));
+  gap: 4px;
+  min-width: 1080px; /* full width needed for all elements */
+}
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+  .table-wrapper .periodic-table {
+    grid-template-columns: repeat(18, minmax(50px, 1fr));
+    min-width: 900px;
+  }
+}
+
+/* Mobile adjustments - keep scroll */
+@media (max-width: 500px) {
+  .table-wrapper {
+    transform: scale(0.85);
+    transform-origin: top left;
+    width: calc(100% / 0.85);
+  }
+}
+
 .non-metal {
   background-color: #202020;
   box-shadow: 0 0 2px #ffff66, 0 0 20px #ffff66;
@@ -410,7 +460,10 @@ section{
 .hidden {
   display: none;
 }
-/* Concept Subsection Styles */
+
+/*--------------------
+ Concept Subsection Styles
+ ---------------------- */
 .concept-subsection {
   margin-top: 30px;
   background: black;
@@ -570,6 +623,243 @@ section{
   line-height: 1.6;
   color: #cbd5e1;
 }
+/* ===== Subshells & Orbitals ===== */
+.sub-orbits {
+  padding: 50px 20px;
+  background: black;
+  color: #fff;
+  border-top: 2px solid #38bdf8;
+  border-radius: 10px;
+}
+
+.sub-orbits h2 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+  color: #00f0ff;
+  text-shadow: 0 0 8px #00f0ff55;
+}
+
+.sub-orbits p {
+  max-width: 800px;
+  margin: 0 auto 24px;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* Grid of subshell cards */
+.subshells {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* Base card */
+.subshell {
+  background: #0a0a0a;
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.subshell h3 {
+  margin: 6px 0 10px;
+  font-size: 1.25rem;
+  color: #e0f7fa;
+}
+
+.subshell p {
+  color: #cfe8ff;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.subshell img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  margin-top: 10px;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.35));
+  border-radius: 8px;
+}
+
+/* Hover effect */
+.subshell:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.35);
+  border-color: rgba(0, 240, 255, 0.6);
+}
+
+/* Accent borders by subshell type */
+.s-orbital   { border-left: 4px solid #00e5ff; box-shadow: 0 0 12px #00e5ff30; }
+.p-orbital   { border-left: 4px solid #7cfc00; box-shadow: 0 0 12px #7cfc0030; }
+.d-orbital   { border-left: 4px solid #ffa500; box-shadow: 0 0 12px #ffa50030; }
+.f-orbital   { border-left: 4px solid #ff5ea8; box-shadow: 0 0 12px #ff5ea830; }
+
+/* Headings tinted per type */
+.s-orbital h3 { color: #b9f8ff; }
+.p-orbital h3 { color: #d7ffd1; }
+.d-orbital h3 { color: #ffe1b3; }
+.f-orbital h3 { color: #ffd3e6; }
+
+/* Make images pop on hover */
+.subshell:hover img {
+  filter: drop-shadow(0 0 14px rgba(0, 255, 255, 0.55));
+}
+/* ===== Subshells & Orbitals (Unique Look) ===== */
+.sub-orbits {
+  padding: 50px 20px;
+  background: #050505;
+  color: #fff;
+  border-top: 2px solid #38bdf8;
+}
+
+.sub-orbits h2 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+  color: #00f0ff;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+}
+
+.sub-orbits p {
+  max-width: 800px;
+  margin: 0 auto 24px;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* Grid layout */
+.subshells {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Base card */
+.subshell {
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+}
+
+.subshell h3 {
+  margin: 6px 0 10px;
+  font-size: 1.25rem;
+}
+
+.subshell p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.subshell img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+  transition: transform 0.25s ease;
+}
+
+/* Hover lift effect */
+.subshell:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+.subshell:hover img {
+  transform: scale(1.05);
+}
+
+/* ==== Individual Styles ==== */
+
+/* S Orbital - Blue glow */
+.s-orbital {
+  background: linear-gradient(145deg, #021b2c, #043f5f);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.3);
+  border: 1px solid rgba(0, 200, 255, 0.5);
+}
+.s-orbital h3 { color: #aeefff; }
+
+/* P Orbital - Green glow */
+.p-orbital {
+  background: linear-gradient(145deg, #0f2e1f, #1e5a3a);
+  box-shadow: 0 0 20px rgba(50, 255, 150, 0.3);
+  border: 1px solid rgba(50, 255, 150, 0.5);
+}
+.p-orbital h3 { color: #d3ffd3; }
+
+/* D Orbital - Orange glow */
+.d-orbital {
+  background: linear-gradient(145deg, #2e1f0b, #5a3a1e);
+  box-shadow: 0 0 20px rgba(255, 180, 80, 0.3);
+  border: 1px solid rgba(255, 180, 80, 0.5);
+}
+.d-orbital h3 { color: #ffe7b3; }
+
+
+
+
+/* Small screens */
+@media (max-width: 480px) {
+  .sub-orbits { padding: 36px 14px; }
+  .sub-orbits h2 { font-size: 1.6rem; }
+  .subshell { padding: 14px; }
+}
+
+/* Bigger images inside cards */
+.subshell img {
+  width: 100%;
+  max-width: 250px; /* bigger */
+  height: auto;
+  margin-top: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.subshell:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.15);
+}
+
+/* ===== Modal Popup Styles ===== */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+}
+
+.image-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,255,255,0.4);
+}
+
+.image-modal.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+
+
 /*shell styles*/
 .flip-card-container {
   display: flex;
@@ -732,7 +1022,7 @@ section{
   }
 }
 
-/* Hide by default */
+
 .hidden {
   display: none;
 }
