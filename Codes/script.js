@@ -215,3 +215,19 @@ modal.addEventListener("click", (e) => {
     modal.style.display = "none";
   }
 });
+fetch('../Data/elements.json')
+  .then(response => response.json())
+  .then(elements => {
+    // Just to check it’s working:
+    console.log(elements); // This will show the whole JSON in your browser console
+
+    // Example: Show the first element name on the page
+    const testDiv = document.createElement('div');
+    testDiv.style.background = '#111';
+    testDiv.style.color = '#0ff';
+    testDiv.style.padding = '10px';
+    testDiv.innerHTML = `<strong>First Element:</strong> ${elements[0].name}`;
+    document.body.appendChild(testDiv);
+  })
+  .catch(error => console.error('Error loading JSON:', error));
+

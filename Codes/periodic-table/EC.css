@@ -1,0 +1,250 @@
+html {
+  scroll-behavior: smooth;
+}
+/* -----------------------
+   Sidebar
+------------------------ */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: #0a0a0a;
+  box-shadow: 0 0 20px #00f0ff55;
+  border-right: 2px solid #00f0ff88;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+}
+
+.sidebar-logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #00f0ff;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px #00f0ff, 0 0 15px #00e5ff;
+}
+
+.sidebar a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 15px;
+  margin: 5px 0;
+  width: 90%;
+  border-radius: 8px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.sidebar a:hover {
+  background: #00f0ff22;
+  color: #00f0ff;
+  text-shadow: 0 0 5px #00f0ff;
+}
+
+.sidebar a.active {
+  background: #00f0ff44;
+  color: #00f0ff;
+}
+
+/* -----------------------
+   Sections & Home
+------------------------ */
+.home-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #ffffff;
+  background: #000;
+}
+
+.home-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px #00f7ff;
+}
+
+.home-section p {
+  font-size: 1.2rem;
+  color: #d0f0ff;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #e2f6ff;
+  margin: 0;
+  padding: 0 0 60px 240px;
+}
+
+/* Section header */
+.concept-section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.concept-header h2 {
+  color: #00f0ff;
+  text-shadow: 0 0 10px #00f0ff60;
+  margin-bottom: 6px;
+}
+
+.concept-header p {
+  line-height: 1.6;
+  color: #cbe8ff;
+}
+
+/* Orbital rules */
+.orbital-rules {
+  margin-top: 30px;
+  background: #050505;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,255,255,0.2);
+  box-shadow: 0 0 18px rgba(0,255,255,0.1);
+}
+
+.orbital-rules h3 {
+  color: #00e8ff;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px #00e8ff70;
+}
+
+.orbital-rules ul li {
+  color: #d0f5ff;
+  line-height: 1.6;
+}
+
+/* Aufbau diagram */
+.orbital-diagram {
+  margin-top: 40px;
+}
+
+.orbital-diagram h3 {
+  color: #00e8ff;
+  text-shadow: 0 0 8px #00e8ff70;
+}
+
+.aufbau-img {
+  width: 100%;
+  max-width: 350px;
+  margin-top: 14px;
+  border-radius: 10px;
+  box-shadow: 0 0 14px rgba(0,255,255,0.35);
+}
+
+/* Examples */
+.config-example {
+  margin-top: 40px;
+  padding: 18px;
+  background: #050505;
+  border: 1px solid rgba(0,255,255,0.2);
+  border-radius: 10px;
+}
+
+.config-example h3 {
+  color: #00e4ff;
+  text-shadow: 0 0 8px #00e4ff60;
+}
+
+.config-example li {
+  line-height: 1.6;
+  color: #cdebff;
+}
+
+/* ---------- Subshells Section ---------- */
+
+.sub-orbits {
+  padding: 60px 20px;
+  background: #000;
+  max-width: 900px;
+  margin: 40px auto 0;
+  border-top: 2px solid #00e4ff;
+}
+
+.sub-orbits h2 {
+  color: #00f0ff;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #00f0ff70;
+}
+
+.sub-orbits p {
+  max-width: 750px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+  color: #cfebff;
+}
+
+/* Grid */
+.subshells {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap: 22px;
+}
+
+/* Card base */
+.subshell {
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  transition: 0.25s;
+  backdrop-filter: blur(6px);
+}
+
+.subshell h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.subshell p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.subshell img {
+  width: 100%;
+  max-width: 200px;
+  margin-top: 14px;
+  border-radius: 10px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+
+/* Individual gradient themes */
+.s-orbital {
+  background: linear-gradient(145deg,#031c29,#043e5c);
+  border: 1px solid rgba(0,200,255,0.4);
+  box-shadow: 0 0 18px #00c8ff30;
+}
+.p-orbital {
+  background: linear-gradient(145deg,#092517,#174c31);
+  border: 1px solid rgba(40,255,150,0.4);
+  box-shadow: 0 0 18px #28ff9630;
+}
+.d-orbital {
+  background: linear-gradient(145deg,#241506,#452e14);
+  border: 1px solid rgba(255,170,80,0.4);
+  box-shadow: 0 0 18px #ffa05030;
+}
+
+/* Hover */
+.subshell:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 0 22px #00f6ff40;
+}
+
+.subshell:hover img {
+  transform: scale(1.07);
+}
+
+/* Responsive */
+@media(max-width:480px){
+  body { padding-left: 10px; padding-right: 10px; }
+  .sub-orbits { padding: 40px 14px; }
+}

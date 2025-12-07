@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="Atomic-shell.css">
+    </head>
+<body>
+     <div class="sidebar">
+        <div class="sidebar-logo">PT Explorer</div>
+        <a href="../table structure.html">Home</a>
+        <a href="pd.html">Periodic Table</a>
+        <a href="blocks.html">Blocks</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="EC.html">Atomic Shells</a>
+        <a href="EC-Shells.html">Electronic Shells</a>
+        <a href="Atomic-shell.html">Main Shells</a>
+        <a href="mindmap.html">Mind Maps</a>
+    </div>
+        <section id="main-shells" class="shell-visuals-section">
+            <h2>Atomic Shells: K, L, M, N</h2>
+            <div class="shell-visual">
+                <svg viewBox="0 0 400 400" class="shell-svg">
+                    <!-- Shells -->
+                    <circle cx="200" cy="200" r="40" stroke="#00ffff" stroke-width="2" fill="none" />
+                    <circle cx="200" cy="200" r="70" stroke="#00ff99" stroke-width="2" fill="none" />
+                    <circle cx="200" cy="200" r="100" stroke="#ffaa00" stroke-width="2" fill="none" />
+                    <circle cx="200" cy="200" r="130" stroke="#ff0077" stroke-width="2" fill="none" />
+
+                    <!-- Shell Labels -->
+                    <text x="200" y="160" fill="#00ffff" font-size="14" text-anchor="middle">K</text>
+                    <text x="200" y="130" fill="#00ff99" font-size="14" text-anchor="middle">L</text>
+                    <text x="200" y="100" fill="#ffaa00" font-size="14" text-anchor="middle">M</text>
+                    <text x="200" y="70" fill="#ff0077" font-size="14" text-anchor="middle">N</text>
+
+                    <!-- Electrons -->
+                    <!-- K shell -->
+                    <circle r="5" fill="#00ffff">
+                        <animateMotion dur="4s" repeatCount="indefinite">
+                            <mpath href="#k-path" />
+                        </animateMotion>
+                    </circle>
+                    <!-- L shell -->
+                    <circle r="5" fill="#00ff99">
+                        <animateMotion dur="5s" repeatCount="indefinite">
+                            <mpath href="#l-path" />
+                        </animateMotion>
+                    </circle>
+                    <!-- M shell -->
+                    <circle r="5" fill="#ffaa00">
+                        <animateMotion dur="6s" repeatCount="indefinite">
+                            <mpath href="#m-path" />
+                        </animateMotion>
+                    </circle>
+                    <!-- N shell -->
+                    <circle r="5" fill="#ff0077">
+                        <animateMotion dur="7s" repeatCount="indefinite">
+                            <mpath href="#n-path" />
+                        </animateMotion>
+                    </circle>
+
+                    <!-- Electron Paths -->
+                    <path id="k-path" d="M200,160 A40,40 0 1,1 199.9,160" fill="none" />
+                    <path id="l-path" d="M200,130 A70,70 0 1,1 199.9,130" fill="none" />
+                    <path id="m-path" d="M200,100 A100,100 0 1,1 199.9,100" fill="none" />
+                    <path id="n-path" d="M200,70 A130,130 0 1,1 199.9,70" fill="none" />
+                </svg>
+            </div>
+        </section>
+        </body>
+        </html>

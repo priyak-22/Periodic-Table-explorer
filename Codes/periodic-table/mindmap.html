@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="mindmap.css">
+</head>
+
+<body>
+ <div class="sidebar">
+        <div class="sidebar-logo">PT Explorer</div>
+        <a href="../table structure.html">Home</a>
+        <a href="pd.html">Periodic Table</a>
+        <a href="blocks.html">Blocks</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="EC.html">Atomic Shells</a>
+        <a href="EC-Shells.html">Electronic Shells</a>
+        <a href="Atomic-shell.html">Main Shells</a>
+        <a href="mindmap.html">Mind Maps</a>
+    </div>
+    <section id="mindmaps" class="mindmap-section">
+        <h2>Periodic Table Mind Maps</h2>
+        <p>Select a block to explore concept maps.</p>
+
+        <div class="mindmap-gallery">
+            <img src="../../Image data/sblock.png" alt="S-Block" data-block="s">
+            <img src="../../Image data/pblock.png" alt="P-Block" data-block="p">
+            <img src="../../Image data/dblock.png" alt="D-Block" data-block="d">
+            <img src="../../Image data/fblock.png" alt="F-Block" data-block="f">
+        </div>
+    </section>
+
+    <!-- Popup -->
+    <div id="mindmapModal" class="mindmap-modal hidden">
+        <button id="modalClose" class="modal-close">×</button>
+        <img id="modalImg" src="" alt="Mindmap Full">
+    </div>
+    <script>
+        const modal = document.getElementById("mindmapModal");
+        const modalImg = document.getElementById("modalImg");
+        const modalClose = document.getElementById("modalClose");
+
+        document.querySelectorAll(".mindmap-gallery img").forEach(img => {
+            img.addEventListener("click", () => {
+                modalImg.src = img.src;
+                modal.classList.remove("hidden");
+            });
+        });
+
+        modalClose.addEventListener("click", () => {
+            modal.classList.add("hidden");
+        });
+
+        modal.addEventListener("click", e => {
+            if (e.target === modal) modal.classList.add("hidden");
+        });
+    </script>
+</body>
+
+</html>
