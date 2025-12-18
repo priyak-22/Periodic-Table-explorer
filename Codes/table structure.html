@@ -15,7 +15,8 @@
 
 <body>
     <!-- Sidebar Navigation -->
-    <div class="sidebar">
+    <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+    <div class="sidebar" id="sidebar">
         <div class="sidebar-logo">PT Explorer</div>
         <a href="#home">Home</a>
         <a href="#categories">Categories</a>
@@ -30,66 +31,43 @@
 
     <!-- Top Navigation Bar -->
     <header class="navbar">
-        <div class="nav-logo">Periodic Table</div>
+        <div class="nav-logo"></div>
         <nav class="nav-links">
             <a href="#home">Home</a>
             <a href="periodic-table/pd.html">Periodic Table</a>
-            <a href="#main">Concepts</a>
-            <a href="#mindmaps">Mind Maps</a>
+            <a href="quizes.html">Quizzes</a>
+            <a href="login.html">Login</a>
         </nav>
     </header>
 
     <!-- Home / Intro Section -->
-    <section id="home" class="home-section">
-        <div class="intro">
-            <div class="text-box">
-                <h1>Interactive Periodic Table</h1>
-                <div class="subtitle">Explore through</div>
-                <div class="era-range">Elements, atomic structure and modern chemistry</div>
-                <a href="#main" class="enter-btn">Enter</a>
-            </div>
-        </div>
-    </section>
+   <!-- Home / Intro Section -->
+<section id="home" class="home-section">
+  <div class="intro">
 
-    <!-- Info Section -->
-    <section id="main" class="info-section">
-        <h2>About the Periodic Table</h2>
-        <p>The Periodic Table is a tabular display of all known chemical elements, arranged by increasing atomic number, electron configuration, and recurring chemical properties.</p>
-        <div class="info-columns">
-            <div class="info-box">
-                <h3>History</h3>
-                <p>First organized in 1869 by Russian chemist Dmitri Mendeleev, who arranged elements by atomic mass and predicted new ones.</p>
-            </div>
-            <div class="info-box">
-                <h3>Structure</h3>
-                <p>Elements are arranged in rows (periods) and columns (groups) based on similar properties. Metals are on the left, non-metals on the right.</p>
-            </div>
-            <div class="info-box">
-                <h3>Fun Fact</h3>
-                <p>Only 94 elements occur naturally. The rest are synthetic and made in laboratories!</p>
-            </div>
-        </div>
+    <div class="text-box">
+      <h1>Interactive Periodic Table</h1>
 
-        <!-- Categories / Cards -->
-        <section id="categories" class="categories-section">
-            <h2>Element Categories</h2>
-            <div class="cards">
-                <div class="card card-glow">Metals</div>
-                <div class="card card-glow">Non-metals</div>
-                <div class="card card-glow">Metalloids</div>
-                <div class="card card-glow">Noble Gases</div>
-                <div class="card card-glow">Alkali & Alkaline</div>
-                <div class="card card-glow">Rare Earth</div>
-            </div>
-        </section>
-    </section>
+      <div class="subtitle">
+        Explore elements, atomic structure, and chemistry concepts
+      </div>
 
-    <!-- Periodic Table Section -->
-    <section class="table-wrapper">
-        <div class="periodic-table">
-            <!-- Elements will go here via JS or static HTML -->
-        </div>
-    </section>
+      <div class="era-range">
+        Learn through visuals, animations, and interactive models
+      </div>
+
+      <!-- Exploration Paths -->
+     <div class="quick-tabs">
+  <a href="periodic-table/pd.html" class="tab">Periodic Table</a>
+  <a href="periodic-table/Atomic-shell.html" class="tab">Atomic Structure</a>
+  <a href="periodic-table/blocks.html" class="tab">Blocks & Trends</a>
+  <a href="periodic-table/mindmap.html" class="tab">Mind Maps</a>
+</div>
+
+
+  </div>
+</section>
+
 
     <script src="script.js"></script>
 </body>

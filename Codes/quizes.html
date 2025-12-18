@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Table Quizzes</title>
+    <link rel="stylesheet" href="quizes.css">
+</head>
+
+<body>
+    <!-- Sidebar Button -->
+    <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-logo">PT Explorer</div>
+        <a href="table structure.html">Home</a>
+        <a href="pd.html">Periodic Table</a>
+        <a href="blocks.html">Blocks</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="EC.html">Atomic Shells</a>
+        <a href="EC-Shells.html">Electronic Shells</a>
+        <a href="Atomic-shell.html">Main Shells</a>
+        <a href="mindmap.html">Mind Maps</a>
+    </div>
+
+    <header>
+        <h1>Periodic Table Quizzes</h1>
+        <p>Select a quiz category and test your knowledge!</p>
+    </header>
+
+    <main>
+        <!-- Categories -->
+        <section class="categories">
+            <button onclick="loadCategory('all')">All Elements</button>
+            <button onclick="loadCategory('alkali')">Alkali Metals</button>
+            <button onclick="loadCategory('noble')">Noble Gases</button>
+        </section>
+
+        <!-- Quiz cards -->
+        <section id="quiz-cards" class="quiz-cards"></section>
+
+        <!-- Quiz area -->
+        <section id="quiz-area" class="quiz-area hidden"></section>
+    </main>
+
+    <script src="quizes.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

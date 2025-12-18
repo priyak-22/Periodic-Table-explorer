@@ -5,9 +5,10 @@
 </head>
 
 <body>
+    <div class="menu-btn" onclick="toggleSidebar()">☰</div>
     <section id="table" class="section table-section">
         <h2 style="text-align:center; margin: 20px 0; color: #00ffcc;">Explore the Periodic Table</h2>
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
             <div class="sidebar-logo">PT Explorer</div>
             <a href="../table structure.html">Home</a>
             <a href="pd.html">Periodic Table</a>
@@ -18,15 +19,29 @@
             <a href="Atomic-shell.html">Main Shells</a>
             <a href="mindmap.html">Mind Maps</a>
         </div>
+        <div class="category-controls">
+            <button data-category="all">All</button>
+            <button data-category="alkali-metal">Alkali Metals</button>
+            <button data-category="alkaline-earth-metal">Alkaline Earth</button>
+            <button data-category="transition-metal">Transition Metals</button>
+            <button data-category="basic-metal">Basic Metals</button>
+            <button data-category="metalloid">Metalloids</button>
+            <button data-category="non-metal">Non-Metals</button>
+            <button data-category="halogen">Halogens</button>
+            <button data-category="noble-gas">Noble Gases</button>
+            <button data-category="lanthanide">Lanthanides</button>
+            <button data-category="actinide">Actinides</button>
+        </div>
+
 
         <div class="periodic-table">
 
             <!--row 1-->
             <div class="element non-metal" style="grid-column: 1;" data-name="Hydrogen" data-symbol="H" data-number="1"
-                data-mass="1.008"><a href="#hydro">H</a><small>1</small></div>
+                data-mass="1.008">H<small>1</small></div>
 
             <div class="element noble-gas" style="grid-column: 18;" data-name="Helium" data-symbol="He" data-number="2"
-                data-mass="4.0026"><a href="#heli">He</a><small>2</small>
+                data-mass="4.0026">He<small>2</small>
             </div>
             <!--rwo2-->
             <div class="element alkali-metal" style="grid-column: 1; grid-row: 2;" data-name="Lithium" data-symbol="Li"
@@ -275,431 +290,63 @@
         </div>
     </section>
     <section>
-        <div class="element-details">
-            <!--HYDROGEN-->
-            <div id="hydro">
-                <h2>Hydrogen (H) – Atomic Number 1</h2>
+        <p>Click on an element to learn more about it!</p>
+        <section id="hydrogen-info" class="element-info hidden">
+            <h2>Hydrogen (H)</h2>
+
+            <p>
+                Hydrogen is the lightest and simplest chemical element in the periodic table.
+                It has an atomic number of 1, meaning it contains only one proton and one
+                electron. Due to its simple structure, hydrogen is highly reactive and
+                rarely exists in its free form on Earth.
+            </p>
+
+            <p>
+                Hydrogen is the most abundant element in the universe and plays a vital role
+                in the life cycle of stars. In stellar cores, hydrogen atoms undergo nuclear
+                fusion to form helium, releasing enormous amounts of energy.
+            </p>
+
+            <p>
+                On Earth, hydrogen is commonly found combined with other elements, such as
+                oxygen in water and carbon in organic compounds. It is widely used in fuel
+                cells, petroleum refining, ammonia production, and space rocket propulsion.
+            </p>
+        </section>
+
+        <section id="helium-info" class="element-info hidden">
+            <h2>Helium (He)</h2>
+
+            <p>
+                Helium is a colorless, odorless, and non-reactive noble gas with an atomic
+                number of 2. It is the second lightest element in the periodic table and
+                exists as a monoatomic gas under normal conditions.
+            </p>
+
+            <p>
+                Helium is formed in large quantities through nuclear fusion in stars and is
+                one of the most abundant elements in the universe. Due to its very low
+                density, helium can escape Earth’s gravity, making it relatively rare on
+                our planet.
+            </p>
+
+            <p>
+                On Earth, helium is mainly obtained from natural gas deposits. It is widely
+                used in cryogenics for cooling superconducting magnets, in balloons and
+                airships, in deep-sea diving mixtures, and in leak detection systems due to
+                its inert nature.
+            </p>
+        </section>
 
-                <p><strong>Hydrogen</strong> is a chemical element with atomic number <strong>1</strong> and symbol
-                    <strong>H</strong>. Its atomic mass is approximately <strong>1.008</strong>. The electron
-                    configuration is <strong>1s1</strong> and it belongs to <strong>Group 1</strong> and <strong>Period
-                        1</strong> of the periodic table, placed in the <strong>s-block</strong>. At standard
-                    temperature and pressure, hydrogen exists as a <strong>gas</strong> and has an extremely low density
-                    of <strong>0.00008988 g/cm³</strong>. It has a melting point of <strong>14.01 K</strong> and a
-                    boiling point of <strong>20.28 K</strong>.
-                </p>
 
-                <p>Hydrogen shows oxidation states of <strong>+1</strong>, and <strong>-1</strong> in hydrides. Its
-                    electronegativity on the Pauling scale is <strong>2.20</strong>, while the first ionization energy
-                    is <strong>1312 kJ/mol</strong>. The atomic radius is approximately <strong>53 pm</strong>. The most
-                    common isotopes include <strong>¹H (protium)</strong>, <strong>²H (deuterium)</strong>, and
-                    <strong>³H (tritium)</strong>, where tritium is radioactive. Hydrogen is generally a colorless gas
-                    in appearance.
-                </p>
-
-                <p>This element was discovered in <strong>1766</strong> and is credited to <strong>Henry
-                        Cavendish</strong> who recognized it as a distinct element. Hydrogen is the most abundant
-                    element in the universe, present in stars, gas giants, water, and various organic compounds.</p>
-
-                <p>Important industrial uses of hydrogen include production of <strong>ammonia</strong> through the
-                    Haber process, applications in <strong>rocket fuel</strong> and <strong>fuel cells</strong>, and
-                    <strong>hydrogenation</strong> in food and chemical industries.
-                </p>
-
-                <p>Physically, hydrogen has the lowest density of all gases and is colorless, odorless, and tasteless.
-                    Chemically, it is highly reactive and forms compounds with most elements. Under normal conditions,
-                    hydrogen exists as a diatomic molecule, <strong>H₂</strong>.</p>
-
-                <p>Hydrogen is extremely flammable and forms explosive mixtures with air. Leaks can collect in closed
-                    areas, creating a severe safety hazard.</p>
-            </div>
-            <!--HELLIUM-->
-            <div id="heli">
-                <h2>Helium (He) – Atomic Number 2</h2>
-
-                <p><strong>Helium</strong> is a chemical element with the symbol <strong>He</strong> and atomic number
-                    <strong>2</strong>. It has an atomic mass of about <strong>4.0026</strong>. The electron
-                    configuration is <strong>1s2</strong> and it belongs to <strong>Group 18</strong> and <strong>Period
-                        1</strong> of the periodic table. Helium is placed in the <strong>s-block</strong>, although it
-                    is a noble gas. At standard temperature and pressure, helium exists as a <strong>colorless, odorless
-                        gas</strong>. It has an extremely low boiling point of <strong>4.22 K</strong> and melts at
-                    <strong>0.95 K</strong> only under pressure.
-                </p>
-
-                <p>Helium has an oxidation state of <strong>0</strong>, due to its completely filled outer shell, making
-                    it chemically inert. Its electronegativity value is practically zero and its ionization energy is
-                    very high at about <strong>2372 kJ/mol</strong>. The atomic radius is approximately <strong>31
-                        pm</strong>. The most common isotopes are <strong>⁴He</strong>, which is stable, and
-                    <strong>³He</strong>, which is rare. Helium is the second most abundant element in the universe,
-                    found mainly in stars and interstellar space.
-                </p>
-
-                <p>Helium was first identified in the solar spectrum in <strong>1868</strong> by <strong>Pierre
-                        Janssen</strong> and <strong>Norman Lockyer</strong>, before it was discovered on Earth.
-                    Commercially, helium is extracted from natural gas deposits where it accumulates from radioactive
-                    decay of heavier elements.</p>
-
-                <p>Major uses of helium include filling <strong>balloons</strong> and <strong>airships</strong>,
-                    providing <strong>cryogenic cooling</strong> for superconducting magnets, especially in MRI
-                    machines, and serving as an inert atmosphere for welding and scientific experiments.</p>
-
-                <p>Physically, helium has the lowest boiling point of all elements and does not solidify at atmospheric
-                    pressure. Chemically, helium is extremely stable, non-reactive, and forms no stable compounds under
-                    ordinary conditions.</p>
-
-                <p>Helium is non-toxic and non-flammable, but inhaling helium in large amounts can displace oxygen and
-                    may cause suffocation in enclosed spaces.</p>
-            </div>
-            <!--LITHIUM-->
-            <div id="litho">
-                <h2>Lithium (Li) – Atomic Number 3</h2>
-
-                <p><strong>Lithium</strong> is a chemical element with the symbol <strong>Li</strong> and atomic number
-                    <strong>3</strong>. Its atomic mass is about <strong>6.94</strong>. The electron configuration is
-                    <strong>1s2 2s1</strong> and it belongs to <strong>Group 1</strong> and <strong>Period 2</strong> of
-                    the periodic table. Lithium is placed in the <strong>s-block</strong> and is classified as an alkali
-                    metal. At standard temperature and pressure, lithium appears as a <strong>soft, silvery
-                        metal</strong> with relatively low density. It melts at around <strong>453.65 K</strong> and
-                    boils at about <strong>1603 K</strong>.
-                </p>
-
-                <p>Lithium generally exhibits an oxidation state of <strong>+1</strong> due to the loss of its single
-                    valence electron. Its electronegativity on the Pauling scale is about <strong>0.98</strong> and its
-                    first ionization energy is around <strong>520 kJ/mol</strong>. The atomic radius is roughly
-                    <strong>167 pm</strong>. The most common isotopes are <strong>⁶Li</strong> and <strong>⁷Li</strong>,
-                    with <strong>⁷Li</strong> being the most abundant. Lithium occurs mainly in minerals such as
-                    spodumene, petalite and in brines found in salt flats.
-                </p>
-
-                <p>Lithium was discovered by <strong>Johan August Arfwedson</strong> in <strong>1817</strong>. The name
-                    comes from the Greek word <em>lithos</em>, meaning stone, because it was first identified in mineral
-                    form rather than in plants or animals. Today, most lithium production comes from brine extraction
-                    and hard-rock mining.</p>
-
-                <p>Lithium has wide industrial applications, especially in <strong>rechargeable lithium-ion
-                        batteries</strong> used in electronics, electric vehicles and energy storage systems. It is also
-                    used in <strong>heat-resistant glass</strong>, <strong>ceramics</strong>, lubricating greases and
-                    certain pharmaceutical treatments such as mood stabilizers.</p>
-
-                <p>Physically, lithium is the <strong>lightest metal</strong> and has a very low density, allowing it to
-                    float on water. Chemically, it is highly reactive, especially with water and air, forming lithium
-                    hydroxide and lithium oxide. It should be stored under oil or in inert conditions to prevent rapid
-                    oxidation.</p>
-
-                <p>Lithium can be hazardous due to its strong reactivity. Contact with water can lead to fire or
-                    explosion, and lithium compounds should be handled carefully with proper safety precautions.</p>
-            </div>
-
-            <!--BERYLLIUM-->
-            <div id="bery">
-                <h2>Beryllium (Be) – Atomic Number 4</h2>
-
-                <p><strong>Beryllium</strong> is a chemical element with the symbol <strong>Be</strong> and atomic
-                    number <strong>4</strong>. Its atomic mass is about <strong>9.0122</strong>. The electron
-                    configuration is <strong>1s2 2s2</strong> and it belongs to <strong>Group 2</strong> and
-                    <strong>Period 2</strong> of the periodic table. Beryllium is placed in the <strong>s-block</strong>
-                    and is classified as an alkaline earth metal. At standard conditions, beryllium is a <strong>hard,
-                        steel-gray metal</strong> with low density and a high melting point of about <strong>1560
-                        K</strong>. Its boiling point is approximately <strong>2742 K</strong>.
-                </p>
-
-                <p>Beryllium commonly exhibits an oxidation state of <strong>+2</strong>, as it loses both of its 2s
-                    electrons. Its electronegativity on the Pauling scale is around <strong>1.57</strong> and its first
-                    ionization energy is about <strong>900 kJ/mol</strong>. The atomic radius is approximately
-                    <strong>112 pm</strong>. The stable isotope <strong>⁹Be</strong> is the most abundant form.
-                    Beryllium occurs primarily in minerals such as beryl and bertrandite, and commercial extraction
-                    usually comes from these ores.
-                </p>
-
-                <p>Beryllium was discovered by <strong>Louis Nicolas Vauquelin</strong> in <strong>1797</strong> while
-                    analyzing beryl gemstones. It was isolated in pure metallic form later in the nineteenth century.
-                    The name comes from the mineral beryl, which contains beryllium in significant amounts.</p>
-
-                <p>Beryllium is used in <strong>aerospace and satellite components</strong> due to its high
-                    strength-to-weight ratio, as well as in <strong>X-ray windows</strong>, nuclear reactors as a
-                    <strong>neutron moderator</strong>, and various precision instruments. Its alloys, especially
-                    beryllium-copper, are valued for their strength, electrical conductivity and resistance to fatigue.
-                </p>
-
-                <p>Physically, beryllium is lightweight, strong and has a high melting point. Chemically, it is less
-                    reactive than other alkaline earth metals and forms a thin protective oxide layer that prevents
-                    rapid oxidation. It reacts slowly with acids to form beryllium salts.</p>
-
-                <p>Beryllium and its compounds are <strong>toxic</strong> and must be handled with strict safety
-                    precautions. Inhalation of beryllium dust can cause serious lung disease known as chronic beryllium
-                    disease, so industrial use requires proper protective measures.</p>
-            </div>
-
-            <!--BORON-->
-            <div id="boro">
-                <h2>Boron (B) – Atomic Number 5</h2>
-
-                <p><strong>Boron</strong> is a chemical element with the symbol <strong>B</strong> and atomic number
-                    <strong>5</strong>. Its atomic mass is about <strong>10.81</strong>. The electron configuration is
-                    <strong>1s2 2s2 2p1</strong> and it belongs to <strong>Group 13</strong> and <strong>Period
-                        2</strong> of the periodic table. Boron is placed in the <strong>p-block</strong> and is
-                    classified as a metalloid. In its pure form, boron is a <strong>hard, black, brittle solid</strong>
-                    with a high melting point of around <strong>2349 K</strong> and a boiling point of approximately
-                    <strong>4200 K</strong>.
-                </p>
-
-                <p>Boron commonly exhibits an oxidation state of <strong>+3</strong>. Its electronegativity on the
-                    Pauling scale is about <strong>2.04</strong>, and its first ionization energy is roughly <strong>801
-                        kJ/mol</strong>. The atomic radius is about <strong>87 pm</strong>. The most abundant isotopes
-                    are <strong>¹¹B</strong> and <strong>¹⁰B</strong>. Boron is not found free in nature; instead, it
-                    occurs in compounds such as borates, borax and colemanite, which are important commercial sources.
-                </p>
-
-                <p>Boron was first recognized in the early nineteenth century. It was independently isolated by
-                    <strong>Joseph-Louis Gay-Lussac</strong>, <strong>Louis Jacques Thénard</strong> and by
-                    <strong>Humphry Davy</strong> in <strong>1808</strong>. The name is derived from “borax,” one of its
-                    principal compounds historically used in glassmaking and cleaning.
-                </p>
-
-                <p>Boron has many important applications. It is used in <strong>borosilicate glass</strong>
-                    (heat-resistant glassware), <strong>detergents</strong>, <strong>semiconductors</strong>,
-                    <strong>fiber-reinforced composites</strong>, and <strong>boron carbide</strong> for armor
-                    materials. Boron compounds are also used in agriculture as micronutrients and in nuclear reactors
-                    because certain isotopes are strong neutron absorbers.
-                </p>
-
-                <p>Physically, boron is lightweight, very hard and has a high melting point. Chemically, it forms
-                    covalent compounds and often behaves more like a nonmetal, showing strong electron-sharing
-                    tendencies. Boron forms borates, borides and various boron-hydrogen compounds known as boranes.</p>
-
-                <p>Boron compounds are generally considered safe in small amounts, but high exposure can be harmful.
-                    Fine boron powders and industrial dusts should be handled with proper protection, especially in
-                    manufacturing environments.</p>
-            </div>
-
-            <!--CARBON-->
-            <div id="carb">
-                <h2>Carbon (C) – Atomic Number 6</h2>
-
-                <p><strong>Carbon</strong> is a chemical element with the symbol <strong>C</strong> and atomic number
-                    <strong>6</strong>. Its average atomic mass is about <strong>12.011</strong>. The electron
-                    configuration is <strong>1s2 2s2 2p2</strong> and it belongs to <strong>Group 14</strong> and
-                    <strong>Period 2</strong> of the periodic table. Carbon is placed in the <strong>p-block</strong>
-                    and is classified as a nonmetal. Carbon occurs in several <strong>allotropic forms</strong>,
-                    including graphite, diamond, graphene and fullerenes. It has a sublimation point of about
-                    <strong>3915 K</strong>.
-                </p>
-
-                <p>Carbon commonly exhibits oxidation states ranging from <strong>−4 to +4</strong>, depending on the
-                    compounds it forms. Its electronegativity on the Pauling scale is about <strong>2.55</strong>, and
-                    its first ionization energy is around <strong>1086 kJ/mol</strong>. The covalent atomic radius is
-                    approximately <strong>77 pm</strong>. The most common isotopes are <strong>¹²C</strong> and
-                    <strong>¹³C</strong>, which are stable, and <strong>¹⁴C</strong>, which is radioactive and used in
-                    radiocarbon dating. Carbon is widely distributed in nature and is found in minerals, fossil fuels,
-                    the atmosphere and all living organisms.
-                </p>
-
-                <p>Carbon has been known since ancient times in the form of charcoal and soot. Graphite and diamond have
-                    long been used as tools, pigments and gemstones. Modern discoveries of new carbon allotropes, such
-                    as graphene and carbon nanotubes, have opened advanced technological fields.</p>
-
-                <p>Carbon has enormous industrial and biological importance. It forms the backbone of <strong>organic
-                        chemistry</strong> and is essential to life. It is used in <strong>steel production</strong>,
-                    <strong>petroleum refining</strong>, <strong>polymers</strong>, <strong>batteries</strong>,
-                    electronics, filters, activated charcoal, and advanced materials like carbon fiber and nanotubes.
-                </p>
-
-                <p>Physically, carbon shows very different properties depending on its form. Diamond is extremely hard
-                    and transparent, while graphite is soft, black and conducts electricity. Chemically, carbon forms
-                    strong covalent bonds, long chains and complex molecules, which gives rise to millions of organic
-                    compounds.</p>
-
-                <p>Carbon itself is generally stable, but some carbon compounds can be toxic or reactive. Carbon
-                    monoxide, for example, is dangerous because it binds strongly to hemoglobin. Proper ventilation and
-                    handling are important when dealing with combustion products and industrial carbon compounds.</p>
-            </div>
-
-            <!--NITROGEN-->
-            <div id="nitr">
-                <h2>Nitrogen (N) – Atomic Number 7</h2>
-
-                <p><strong>Nitrogen</strong> is a chemical element with the symbol <strong>N</strong> and atomic number
-                    <strong>7</strong>. Its atomic mass is about <strong>14.007</strong>. The electron configuration is
-                    <strong>1s2 2s2 2p3</strong> and it belongs to <strong>Group 15</strong> and <strong>Period
-                        2</strong> of the periodic table. Nitrogen is placed in the <strong>p-block</strong> and is
-                    classified as a nonmetal. At standard temperature and pressure, nitrogen exists as a
-                    <strong>colorless, odorless diatomic gas (N₂)</strong>, which makes up about 78 percent of Earth’s
-                    atmosphere. It has a boiling point of <strong>77.36 K</strong> and a melting point of <strong>63.15
-                        K</strong>.
-                </p>
-
-                <p>Nitrogen can exhibit a wide range of oxidation states from <strong>−3 to +5</strong>, depending on
-                    its compounds. Its electronegativity on the Pauling scale is about <strong>3.04</strong>, and its
-                    first ionization energy is roughly <strong>1402 kJ/mol</strong>. The atomic radius is around
-                    <strong>75 pm</strong>. The most common isotopes are <strong>¹⁴N</strong> and <strong>¹⁵N</strong>.
-                    Nitrogen occurs naturally in the atmosphere and in compounds such as nitrates, ammonia and organic
-                    molecules.
-                </p>
-
-                <p>Nitrogen gas was first isolated in the late eighteenth century. It was studied by several scientists,
-                    including <strong>Daniel Rutherford</strong> in <strong>1772</strong>, who is often credited with
-                    its discovery. Over time, nitrogen was recognized as an essential component of living organisms and
-                    as part of the global nitrogen cycle.</p>
-
-                <p>Nitrogen has many industrial uses. It is essential for producing <strong>ammonia (Haber
-                        process)</strong>, which is used in fertilizers, and it plays a key role in explosives,
-                    pharmaceuticals and synthetic materials. Liquid nitrogen is used for <strong>cryogenic
-                        cooling</strong>, food preservation, and scientific research. Nitrogen gas is also used as an
-                    inert atmosphere in welding and manufacturing.</p>
-
-                <p>Physically, nitrogen is a low-boiling, inert gas. Chemically, the N≡N triple bond in molecular
-                    nitrogen is very strong, making N₂ relatively unreactive under normal conditions. However, nitrogen
-                    forms many important compounds, including ammonia, nitrates and organic amines.</p>
-
-                <p>Nitrogen gas is generally safe, but it can displace oxygen in enclosed spaces and cause suffocation.
-                    Some nitrogen compounds, such as nitrites and certain nitrogen oxides, are toxic or environmentally
-                    harmful and should be handled carefully.</p>
-            </div>
-
-            <!--OXYGEN-->
-            <div id="oxy">
-                <h2>Oxygen (O) – Atomic Number 8</h2>
-
-                <p><strong>Oxygen</strong> is a chemical element with the symbol <strong>O</strong> and atomic number
-                    <strong>8</strong>. Its atomic mass is about <strong>15.999</strong>. The electron configuration is
-                    <strong>1s2 2s2 2p4</strong> and it belongs to <strong>Group 16</strong> and <strong>Period
-                        2</strong> of the periodic table. Oxygen is placed in the <strong>p-block</strong> and is
-                    classified as a nonmetal. At standard temperature and pressure, oxygen exists mainly as a
-                    <strong>colorless, odorless diatomic gas (O₂)</strong>. It has a boiling point of <strong>90.19
-                        K</strong> and a melting point of <strong>54.36 K</strong>.
-                </p>
-
-                <p>Oxygen commonly exhibits oxidation states of <strong>−2</strong> in most compounds, although it can
-                    show other states such as <strong>−1, +1, +2</strong> in certain compounds like peroxides or with
-                    fluorine. Its electronegativity on the Pauling scale is about <strong>3.44</strong>, and its first
-                    ionization energy is roughly <strong>1314 kJ/mol</strong>. The atomic radius is around <strong>73
-                        pm</strong>. The most common isotopes are <strong>¹⁶O</strong>, <strong>¹⁷O</strong> and
-                    <strong>¹⁸O</strong>, with <strong>¹⁶O</strong> being the most abundant. Oxygen is widely
-                    distributed in Earth’s crust, oceans and atmosphere, and is essential for life.
-                </p>
-
-                <p>Oxygen was independently discovered by <strong>Carl Wilhelm Scheele</strong> and <strong>Joseph
-                        Priestley</strong> in the <strong>1770s</strong>. The name “oxygen” comes from the Greek words
-                    meaning “acid former,” because early chemists believed oxygen was necessary in all acids, a view
-                    later corrected with modern chemical understanding.</p>
-
-                <p>Oxygen has many critical uses. It is necessary for <strong>respiration</strong>, combustion,
-                    metallurgy and chemical synthesis. Liquid oxygen is used as an <strong>oxidizer in rocket
-                        propulsion</strong>, while industrial oxygen is used in steelmaking, medical oxygen therapy and
-                    water treatment. Ozone (O₃), an allotrope of oxygen, plays a vital role in absorbing harmful
-                    ultraviolet radiation in the upper atmosphere.</p>
-
-                <p>Physically, oxygen is a reactive nonmetal and supports combustion. Chemically, it forms oxides with
-                    most elements and participates in many biological and geochemical cycles, including respiration and
-                    photosynthesis. It readily forms compounds such as water, carbon dioxide and various minerals.</p>
-
-                <p>Oxygen is essential to life, but high concentrations can increase fire risk. Liquid oxygen is
-                    extremely cold and can cause severe burns. Proper handling and storage are important in industrial
-                    and medical settings.</p>
-            </div>
-            <!--FLUORINE-->
-            <div id="flu">
-                <h2>Fluorine (F) – Atomic Number 9</h2>
-
-                <p><strong>Fluorine</strong> is a chemical element with the symbol <strong>F</strong> and atomic number
-                    <strong>9</strong>. Its atomic mass is about <strong>18.998</strong>. The electron configuration is
-                    <strong>1s2 2s2 2p5</strong> and it belongs to <strong>Group 17</strong> and <strong>Period
-                        2</strong> of the periodic table. Fluorine is placed in the <strong>p-block</strong> and is
-                    classified as a halogen. At standard temperature and pressure, fluorine is a <strong>pale yellow
-                        gas</strong> with a boiling point of <strong>85.03 K</strong> and a melting point of
-                    <strong>53.53 K</strong>.
-                </p>
-
-                <p>Fluorine almost always exhibits an oxidation state of <strong>−1</strong> in compounds. It is the
-                    most electronegative element with a Pauling value of about <strong>3.98</strong>, and its first
-                    ionization energy is roughly <strong>1681 kJ/mol</strong>. The atomic radius is around <strong>71
-                        pm</strong>. Its only stable isotope is <strong>¹⁹F</strong>. Fluorine is not found free in
-                    nature because of its extreme reactivity, but it occurs in minerals such as fluorspar (calcium
-                    fluoride) and cryolite.</p>
-
-                <p>Fluorine was isolated by <strong>Henri Moissan</strong> in <strong>1886</strong>, who developed a
-                    method to electrolyze hydrogen fluoride. His achievement was significant because fluorine’s
-                    reactivity made it difficult and dangerous to obtain in pure form.</p>
-
-                <p>Fluorine has important industrial uses. It is used to produce <strong>fluorocarbons</strong>,
-                    <strong>refrigerants</strong>, and <strong>polytetrafluoroethylene (PTFE)</strong>, known as Teflon.
-                    Fluoride compounds are added to <strong>toothpaste</strong> and some water supplies to help prevent
-                    dental cavities. Uranium hexafluoride, a fluorine compound, is essential in the <strong>nuclear fuel
-                        cycle</strong> for uranium enrichment.
-                </p>
-
-                <p>Physically, fluorine is a light, highly reactive gas with a sharp odor. Chemically, it is the most
-                    reactive of all elements and forms compounds with almost every other element, including some noble
-                    gases under special conditions. It vigorously reacts with many substances, often producing heat and
-                    sometimes flames.</p>
-
-                <p>Fluorine and many fluoride compounds are <strong>dangerous</strong> and corrosive. Direct exposure to
-                    fluorine gas can cause severe burns, respiratory damage, and chemical injuries. Industrial handling
-                    requires strict safety controls, protective equipment and proper ventilation.</p>
-            </div>
-            <!--NEON-->
-            <div id="neo">
-                <h2>Neon (Ne) – Atomic Number 10</h2>
-
-                <p><strong>Neon</strong> is a chemical element with the symbol <strong>Ne</strong> and atomic number
-                    <strong>10</strong>. Its atomic mass is about <strong>20.180</strong>. The electron configuration is
-                    <strong>1s2 2s2 2p6</strong> and it belongs to <strong>Group 18</strong> and <strong>Period
-                        2</strong> of the periodic table. Neon is placed in the <strong>p-block</strong> and is
-                    classified as a noble gas. At standard temperature and pressure, neon exists as a <strong>colorless,
-                        odorless gas</strong> with a very low density. It liquefies at <strong>24.56 K</strong> and
-                    boils at <strong>27.07 K</strong>.</p>
-
-                <p>Neon has an oxidation state of <strong>0</strong> under normal conditions because its outer shell is
-                    complete, making it extremely chemically inert. Its Pauling electronegativity is undefined (because
-                    it does not form stable compounds under ordinary conditions), and its first ionization energy is
-                    around <strong>2081 kJ/mol</strong>. The atomic radius is about <strong>38 pm</strong>. The most
-                    stable and common isotopes are <strong>²⁰Ne</strong>, <strong>²¹Ne</strong>, and
-                    <strong>²²Ne</strong>. Neon is relatively rare in Earth’s atmosphere, composing a small fraction of
-                    the air; it is more abundant in stars and interstellar space.</p>
-
-                <p>Neon was discovered in <strong>1898</strong> by <strong>Sir William Ramsay</strong> and
-                    <strong>Morris Travers</strong> during the study of liquefied air. Its name comes from the Greek
-                    word <em>neos</em>, meaning “new,” because it was a newly identified component of the atmosphere at
-                    that time.</p>
-
-                <p>Neon has several important uses. It is widely used in <strong>neon lighting and signage</strong>,
-                    producing bright red-orange glow in discharge tubes that makes it popular for advertising signs.
-                    Neon is also used in certain types of <strong>high-voltage indicators</strong>, vacuum tubes, and as
-                    a component in specialized <strong>cryogenic refrigeration</strong> mixtures.</p>
-
-                <p>Physically, neon is a very light gas with low boiling and melting points, and does not react under
-                    ordinary conditions because of its stable electron configuration. Chemically, neon is considered
-                    inert and forms virtually no stable compounds at room temperature or pressure. Its inertness and
-                    stability make neon safe in normal handling.</p>
-
-                <p>Neon is non-toxic, non-flammable, and chemically inert. Because it does not easily react or combine
-                    with other elements, it poses minimal chemical hazard under normal conditions. However, as with any
-                    gas in enclosed spaces, extreme concentrations could displace oxygen and should be avoided.</p>
-            </div>
-<!--SODIUM-->
-<div id="sod">
-  <h2>Sodium (Na) – Atomic Number 11</h2>
-
-  <p><strong>Sodium</strong> is a chemical element with the symbol <strong>Na</strong> and atomic number <strong>11</strong>. Its atomic mass is about <strong>22.990</strong>. The electron configuration is <strong>1s2 2s2 2p6 3s1</strong> and it belongs to <strong>Group 1</strong> and <strong>Period 3</strong> of the periodic table. Sodium is placed in the <strong>s-block</strong> and is classified as an alkali metal. At standard conditions, sodium is a <strong>soft, silvery metal</strong> that can be cut easily with a knife. It melts at around <strong>370.87 K</strong> and boils at about <strong>1156 K</strong>.</p>
-
-  <p>Sodium usually shows an oxidation state of <strong>+1</strong> in its compounds. Its Pauling electronegativity is about <strong>0.93</strong>, and its first ionization energy is roughly <strong>496 kJ/mol</strong>. The atomic radius is around <strong>186 pm</strong>. The most abundant stable isotope is <strong>²³Na</strong>. Sodium does not occur free in nature because it reacts quickly with air and water, forming compounds such as common salt (sodium chloride) and sodium carbonate in minerals and seawater.</p>
-
-  <p>Sodium was first isolated by <strong>Sir Humphry Davy</strong> in <strong>1807</strong> using electrolysis of molten sodium hydroxide. This was an important step in the early development of electrochemistry and the isolation of several reactive metals.</p>
-
-  <p>Sodium has many important uses. It is a key component of <strong>table salt</strong> and plays a vital role in biological processes such as nerve conduction and fluid balance in living organisms. Industrially, sodium compounds are used in the manufacture of <strong>glass</strong>, <strong>paper</strong>, <strong>soaps</strong>, and <strong>detergents</strong>. Metallic sodium is used in certain <strong>sodium-vapor lamps</strong> that produce a strong yellow light for street lighting, and in some chemical synthesis processes.</p>
-
-  <p>Physically, sodium is soft and lightweight. Chemically, it is highly reactive and quickly forms a layer of oxide when exposed to air. It reacts vigorously with water, producing sodium hydroxide and hydrogen gas, often with heat and sometimes flames. Because of its reactivity, sodium is stored in substances like oil or kerosene to prevent contact with air or moisture.</p>
-
-  <p>Sodium metal is considered <strong>reactive and hazardous</strong>. Direct contact with water can cause violent reactions. In the body, excessive intake of sodium compounds like sodium chloride can contribute to health issues such as high blood pressure, although sodium is essential in small, balanced quantities. Handling metallic sodium requires protective equipment and proper storage.</p>
-</div>
-
-
-        </div>
     </section>
+
+
     <div id="tooltip" class="tooltip hidden"></div>
 
     <!-- Link your JavaScript file -->
     <script src="../script.js"></script>
+    <script src="pd.js"></script>
 
 </body>
 

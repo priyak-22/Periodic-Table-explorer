@@ -1,108 +1,29 @@
-/* -----------------------
-   Global & Base Styles
------------------------- */
+/* =======================
+   GLOBAL STYLES
+======================= */
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  text-align: center;
-  background-color: rgb(3, 0, 0);
+  background: #030000;
   color: #f0e6d2;
-  margin: 0 auto;
-  width: 70%;
-  padding-left: 230px;
+  margin: 0;
   padding-right: 20px;
-  -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  justify-content: center;
-  caret-color: transparent; /* prevent blinking caret in text-box */
+  caret-color: transparent;
   user-select: none;
 }
 
 a {
+  text-decoration: none;
   color: inherit;
-  text-decoration: none;
 }
 
-/* -----------------------
-   Intro Section
------------------------- */
-.intro {
-  height: 100vh;
-  width: 100%;
-  position: relative;
-  background: url("https://static.vecteezy.com/system/resources/previews/023/041/928/large_2x/hydrogen-molecule-or-atom-abstract-structure-for-science-or-medical-background-clear-blue-water-concept-of-chemical-model-connections-atoms-3d-rendering-generat-ai-free-photo.jpg") no-repeat center center / cover;
-  animation: slowZoom 15s ease-in-out infinite alternate;
-  overflow: hidden;
-  z-index: 5;
-}
-
-@keyframes slowZoom {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.08); }
-}
-
-/* Text Box inside Intro */
-.text-box {
-  position: absolute;
-  top: 20%;
-  left: 85%;
-  transform: translate(-50%, -50%);
-  text-align: left;
-  animation: fadeIn 2.2s ease forwards;
-  opacity: 0;
-  z-index: 10;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translate(-50%, -45%); }
-  to { opacity: 1; transform: translate(-50%, -50%); }
-}
-
-.text-box h1 {
-  font-family: 'Cinzel', serif;
-  font-size: 3rem;
-  font-weight: 700;
-  color: #006e76;
-  text-shadow: 0 0 20px rgba(0,0,0,0.7);
-}
-
-.text-box .subtitle,
-.text-box .era-range {
-  font-size: 1.3rem;
-  margin-top: 10px;
-  color: #eeeff3;
-}
-
-.text-box .era-range {
-  margin: 8px 0 25px;
-  font-size: 1.1rem;
-}
-
-/* Enter Button */
-.enter-btn {
-  padding: 10px 25px;
-  background: rgba(255, 248, 231, 0);
-  color: #d0efc0;
-  border-radius: 8px;
-  font-weight: 600;
-  border: 2px solid #b7f894;
-  transition: 0.3s;
-  text-decoration: none;
-  box-shadow: 0 0 12px rgba(160,224,214,0.5);
-}
-
-.enter-btn:hover {
-  background: #040404;
-  color: #13e7b6;
-  transform: scale(1.05);
-}
-
-/* -----------------------
-   Navigation
------------------------- */
+/* =======================
+   NAVBAR
+======================= */
 .navbar {
   position: sticky;
   top: 0;
@@ -114,7 +35,6 @@ a {
   padding: 0.8rem 2rem;
   box-shadow: 0 0 15px #00f0ff33;
   border-bottom: 2px solid #00f0ff66;
-  backdrop-filter: blur(5px);
 }
 
 .nav-logo {
@@ -125,23 +45,21 @@ a {
 }
 
 .nav-links a {
-  color: #fff;
-  text-decoration: none;
   margin-left: 2rem;
   font-weight: 500;
+  color: white;
   position: relative;
-  transition: all 0.3s ease;
 }
 
 .nav-links a::after {
   content: "";
   position: absolute;
-  width: 0%;
-  height: 2px;
-  background: #00f0ff;
   bottom: -4px;
   left: 0;
-  transition: 0.4s ease;
+  width: 0;
+  height: 2px;
+  background: #00f0ff;
+  transition: 0.4s;
 }
 
 .nav-links a:hover {
@@ -152,9 +70,19 @@ a {
   width: 100%;
 }
 
-/* -----------------------
-   Sidebar
------------------------- */
+/* =======================
+   SIDEBAR
+======================= */
+.menu-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 24px;
+  color: #00f0ff;
+  cursor: pointer;
+  z-index: 1100;
+}
+
 .sidebar {
   position: fixed;
   left: 0;
@@ -162,13 +90,19 @@ a {
   width: 250px;
   height: 100%;
   background: #0a0a0a;
-  box-shadow: 0 0 20px #00f0ff55;
   border-right: 2px solid #00f0ff88;
+  box-shadow: 0 0 20px #00f0ff55;
   padding-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
   z-index: 1000;
+}
+
+.sidebar.open {
+  transform: translateX(0);
 }
 
 .sidebar-logo {
@@ -176,81 +110,162 @@ a {
   font-weight: bold;
   color: #00f0ff;
   margin-bottom: 20px;
-  text-shadow: 0 0 8px #00f0ff, 0 0 15px #00e5ff;
+  text-shadow: 0 0 10px #00f0ff;
 }
 
 .sidebar a {
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  padding: 12px 15px;
-  margin: 5px 0;
   width: 90%;
+  padding: 12px;
+  margin: 5px 0;
+  color: white;
   border-radius: 8px;
-  text-align: left;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 .sidebar a:hover {
   background: #00f0ff22;
   color: #00f0ff;
-  text-shadow: 0 0 5px #00f0ff;
 }
 
-.sidebar a.active {
-  background: #00f0ff44;
-  color: #00f0ff;
+/* =======================
+   INTRO SECTION
+======================= */
+.intro {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: black;;
 }
 
-/* -----------------------
-   Sections & Home
------------------------- */
-.home-section {
-  padding: 4rem 2rem;
+/* CENTERED TEXT */
+.text-box {
+  width: 50%;
+  margin: 0 auto;
   text-align: center;
-  color: #ffffff;
-  background: #000;
+  padding-top:10px;
+  z-index: 5;
+  opacity: 0;
+  animation: fadeCenter 1.8s ease forwards;
 }
 
-.home-section h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #ffffff;
-  text-shadow: 0 0 10px #00f7ff;
+@keyframes fadeCenter {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.home-section p {
-  font-size: 1.2rem;
+
+
+.text-box h1 {
+  font-family: "Cinzel", serif;
+  font-size: 3rem;
+  color: #00eaff;
+  text-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  margin-top: 10px;
   color: #d0f0ff;
 }
 
+.era-range {
+  font-size: 1.1rem;
+  margin: 10px 0 25px;
+  color: #bffcff;
+}
+
+.enter-btn {
+  padding: 10px 25px;
+  border: 2px solid #00f0ff;
+  border-radius: 8px;
+  color: #00f0ff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.enter-btn:hover {
+  background: #00f0ff;
+  color: black;
+}
+
+
+/* RIGHT SIDE LINEAR GRADIENT — FADES AT CENTER */
+.intro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to left,
+    rgba(0, 255, 255, 0.55) 0%,
+    rgba(0, 170, 255, 0.35) 25%,
+    rgba(0, 100, 255, 0.18) 40%,
+    rgba(0, 0, 0, 0) 55%
+  );
+  animation: gradientDrift 7s ease-in-out infinite;
+  z-index: 1;
+}
 /* -----------------------
-   Info Section
+   Intro Quick Access Tabs
 ------------------------ */
+.quick-tabs {
+  margin-top: 35px;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tab {
+  padding: 12px 22px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.6);
+  color: #d0f0ff;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.18);
+  transition: all 0.35s ease;
+}
+
+.tab:hover {
+  color: #00f0ff;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.45);
+  transform: translateY(-4px);
+}
+
+
+/* =======================
+   SECTIONS
+======================= */
+.home-section {
+  padding-top:5px;
+  background: black;
+  text-align: center;
+}
+
 .info-section {
   margin: 40px auto;
   padding: 30px;
   background: #0d0d0d;
   border-radius: 16px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.05);
-  color: #f0f0f0;
   max-width: 1200px;
-  font-family: 'Segoe UI', sans-serif;
   border-top: 2px solid #38bdf8;
-}
-
-.info-section h2 {
-  font-size: 28px;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #ffcc00;
 }
 
 .info-columns {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .info-box {
@@ -258,106 +273,57 @@ a {
   background: black;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: inset 0 0 10px rgba(255,255,255,0.03);
-  transition: transform 0.3s;
+  transition: 0.3s;
 }
 
 .info-box:hover {
   transform: translateY(-5px);
 }
 
-.info-box h3 {
-  color: #66fcf1;
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-.info-box p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #cccccc;
-}
-
-/* -----------------------
-   Cards / Categories
------------------------- */
+/* =======================
+   CARDS
+======================= */
 .cards {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 1rem;
   gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card {
   background: #222;
   padding: 1rem;
   border-radius: 8px;
+  box-shadow: 0 0 10px #00f0ff;
   cursor: pointer;
-  box-shadow: 0 0 10px #0ff;
-  transition: transform 0.3s ease;
+  transition: 0.3s;
 }
 
 .card:hover {
   transform: scale(1.05);
 }
 
-/* -----------------------
-   Periodic Table
------------------------- */
-.table-wrapper {
-  width: 100%;
-  overflow-x: auto;
-  padding-bottom: 10px;
-}
-
+/* =======================
+   PERIODIC TABLE
+======================= */
 .periodic-table {
   display: grid;
   grid-template-columns: repeat(18, minmax(60px, 1fr));
   grid-auto-rows: 60px;
   gap: 4px;
-  justify-content: center;
-  margin: 100px auto 0;
+  margin: 100px auto;
   min-width: 1080px;
   background: black;
   padding: 40px;
-  border-top: 2px solid #38bdf8;
   border-radius: 10px;
 }
 
-.element {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  background-color: #39FF14;
-  border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 8px;
-  padding: 5px;
-  transition: transform 0.3s ease;
-}
-
-.element:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px #ccc;
-  cursor: pointer;
-}
-
-/* -----------------------
-   Responsive
------------------------- */
+/* =======================
+   RESPONSIVE
+======================= */
 @media (max-width: 768px) {
-  .periodic-table {
-    grid-template-columns: repeat(18, minmax(50px, 1fr));
-    min-width: 900px;
-  }
-}
-
-@media (max-width: 500px) {
-  .table-wrapper {
-    transform: scale(0.85);
-    transform-origin: top left;
-    width: calc(100% / 0.85);
+  .text-box {
+    width: 100%;
+    padding: 40px;
   }
 }
