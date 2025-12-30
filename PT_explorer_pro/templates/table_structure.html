@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interactive Periodic Table</title>
-    <link rel="stylesheet" href="table design.css" />
+    <link rel="stylesheet" href="{% static 'css/table design.css' %}" />
      <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Orbitron:wght@400;700&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
     <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
@@ -19,14 +20,13 @@
     <div class="sidebar" id="sidebar">
         <div class="sidebar-logo">PT Explorer</div>
         <a href="#home">Home</a>
-        <a href="#categories">Categories</a>
-        <a href="periodic-table/pd.html">Periodic Table</a>
-        <a href="periodic-table/blocks.html">Blocks</a>
-        <a href="periodic-table/timeline.html">Timeline</a>
-        <a href="periodic-table/EC.html">Atomic Shells</a>
-        <a href="periodic-table/EC-Shells.html">Electronic Shells</a>
-        <a href="periodic-table/Atomic-shell.html">Main Shells</a>
-        <a href="periodic-table/mindmap.html">Mind Maps</a>
+        <a href="{% url 'pd' %}">Periodic Table</a>
+        <a href="{% url 'blocks' %}">Blocks</a>
+        <a href="{% url 'timeline' %}">Timeline</a>
+        <a href="{% url 'atomic_shell' %}">Atomic Shells</a>
+        <a href="{% url 'ec_shells' %}">Electronic Shells</a>
+        <a href="{% url 'atomic_shell' %}">Main Shells</a>
+        <a href="{% url 'mindmap' %}">Mind Maps</a>
     </div>
 
     <!-- Top Navigation Bar -->
@@ -69,7 +69,7 @@
 </section>
 
 
-    <script src="script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>
