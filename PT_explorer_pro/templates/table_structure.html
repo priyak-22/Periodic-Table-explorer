@@ -34,13 +34,12 @@
         <div class="nav-logo"></div>
         <nav class="nav-links">
             <a href="#home">Home</a>
-            <a href="periodic-table/pd.html">Periodic Table</a>
-            <a href="quizes.html">Quizzes</a>
-            <a href="login.html">Login</a>
+            <a href="{% url 'pd' %}">Periodic Table</a>
+            <a href="{% url 'quizes' %}">Quizzes</a>
+            <a href="{% url 'login' %}">Login</a>
         </nav>
     </header>
 
-    <!-- Home / Intro Section -->
    <!-- Home / Intro Section -->
 <section id="home" class="home-section">
   <div class="intro">
@@ -58,10 +57,10 @@
 
       <!-- Exploration Paths -->
      <div class="quick-tabs">
-  <a href="periodic-table/pd.html" class="tab">Periodic Table</a>
-  <a href="periodic-table/Atomic-shell.html" class="tab">Atomic Structure</a>
-  <a href="periodic-table/blocks.html" class="tab">Blocks & Trends</a>
-  <a href="periodic-table/mindmap.html" class="tab">Mind Maps</a>
+  <a href="{% url 'pd' %}" class="tab">Periodic Table</a>
+  <a href="{% url 'atomic_shell' %}" class="tab">Atomic Structure</a>
+  <a href="{% url 'blocks' %}" class="tab">Blocks & Trends</a>
+  <a href="{% url 'mindmap' %}" class="tab">Mind Maps</a>
 </div>
 
 

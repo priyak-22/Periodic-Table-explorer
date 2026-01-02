@@ -254,23 +254,30 @@ a {
 /* -----------------------
    Tooltip
 ------------------------ */
-.tooltip, .element-details {
-  position: absolute;
-  display: none;
-  background: rgba(0,0,0,0.85);
+.tooltip {
+  position: fixed;              /* 🔑 MOST IMPORTANT FIX */
+  background: rgba(0,0,0,0.9);
   color: #fff;
   font-weight: 600;
   padding: 10px 15px;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0,255,255,0.5);
   font-size: 14px;
-  z-index: 9999;
+  z-index: 99999;               /* higher than sidebar */
   pointer-events: none;
   max-width: 220px;
   text-align: left;
   line-height: 1.4;
-  transition: opacity 0.2s ease;
+  opacity: 1;
+  visibility: visible;
 }
+
+.tooltip.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
 
 .element-details.show {
   display: block;
@@ -337,4 +344,10 @@ a {
 .element-info a {
   color: #00ccff;          /* Links inside text */
   text-decoration: underline;
+}
+
+#elementChartPopup {
+  max-height: 85vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }

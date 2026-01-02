@@ -1,31 +1,32 @@
+{% load static %}
 <html>
 
 <head>
-    <link rel="stylesheet" href="mindmap.css">
+    <link rel="stylesheet" href="{% static 'css/mindmap.css' %}">
 </head>
 
 <body>
-    <div class="menu-btn" onclick="toggleSidebar()">☰</div>
- <div class="sidebar" id="sidebar">
-        <div class="sidebar-logo">PT Explorer</div>
-        <a href="../table structure.html">Home</a>
-        <a href="pd.html">Periodic Table</a>
-        <a href="blocks.html">Blocks</a>
-        <a href="timeline.html">Timeline</a>
-        <a href="EC.html">Atomic Shells</a>
-        <a href="EC-Shells.html">Electronic Shells</a>
-        <a href="Atomic-shell.html">Main Shells</a>
-        <a href="mindmap.html">Mind Maps</a>
-    </div>
+     <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+   <div class="sidebar" id="sidebar">
+            <div class="sidebar-logo">PT Explorer</div>
+            <a href="{% url 'table_structure' %}">Home</a>
+            <a href="{% url 'pd' %}">Periodic Table</a>
+            <a href="{% url 'blocks' %}">Blocks</a>
+            <a href="{% url 'timeline' %}">Timeline</a>
+            <a href="{% url 'atomic_shell' %}">Atomic Shells</a>
+            <a href="{% url 'ec_shells' %}">Electronic Shells</a>
+            <a href="{% url 'ec' %}">Main Shells</a>
+            <a href="{% url 'mindmap' %}">Mind Maps</a>
+        </div>
     <section id="mindmaps" class="mindmap-section">
         <h2>Periodic Table Mind Maps</h2>
         <p>Select a block to explore concept maps.</p>
 
         <div class="mindmap-gallery">
-            <img src="../../Image data/sblock.png" alt="S-Block" data-block="s">
-            <img src="../../Image data/pblock.png" alt="P-Block" data-block="p">
-            <img src="../../Image data/dblock.png" alt="D-Block" data-block="d">
-            <img src="../../Image data/fblock.png" alt="F-Block" data-block="f">
+            <img src="{% static 'Image-data/sblock.png' %}" alt="S-Block" data-block="s">
+            <img src="{% static 'Image-data/pblock.png' %}" alt="P-Block" data-block="p">
+            <img src="{% static 'Image-data/dblock.png' %}" alt="D-Block" data-block="d">
+            <img src="{% static 'Image-data/fblock.png' %}" alt="F-Block" data-block="f">
         </div>
     </section>
 
@@ -54,7 +55,7 @@
             if (e.target === modal) modal.classList.add("hidden");
         });
     </script>
-    <script src="../script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>

@@ -6,16 +6,16 @@
 <body>
      <div class="menu-btn" onclick="toggleSidebar()">☰</div>
      <div class="sidebar" id="sidebar">
-        <div class="sidebar-logo">PT Explorer</div>
-        <a href="../table structure.html">Home</a>
-        <a href="pd.html">Periodic Table</a>
-        <a href="blocks.html">Blocks</a>
-        <a href="timeline.html">Timeline</a>
-        <a href="EC.html">Atomic Shells</a>
-        <a href="EC-Shells.html">Electronic Shells</a>
-        <a href="Atomic-shell.html">Main Shells</a>
-        <a href="mindmap.html">Mind Maps</a>
-    </div>
+            <div class="sidebar-logo">PT Explorer</div>
+            <a href="{% url 'table_structure' %}">Home</a>
+            <a href="{% url 'pd' %}">Periodic Table</a>
+            <a href="{% url 'blocks' %}">Blocks</a>
+            <a href="{% url 'timeline' %}">Timeline</a>
+            <a href="{% url 'atomic_shell' %}">Atomic Shells</a>
+            <a href="{% url 'ec_shells' %}">Electronic Shells</a>
+            <a href="{% url 'ec' %}">Main Shells</a>
+            <a href="{% url 'mindmap' %}">Mind Maps</a>
+        </div>
         <section id="main-shells" class="shell-visuals-section">
             <h2>Atomic Shells: K, L, M, N</h2>
             <div class="shell-visual">
@@ -66,6 +66,6 @@
                 </svg>
             </div>
         </section>
-        <script src="../script.js"></script>
+        <script src="{% static 'js/script.js' %}"></script>
     </body>
         </html>

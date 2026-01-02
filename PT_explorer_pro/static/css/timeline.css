@@ -101,7 +101,7 @@ body {
   margin: auto;
   width: 70%;
   -webkit-font-smoothing: antialiased;
-  padding-left: 230px;
+  padding: auto;
 }
 
 .head {

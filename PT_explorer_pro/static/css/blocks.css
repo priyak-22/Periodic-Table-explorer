@@ -81,7 +81,7 @@ body {
   margin: auto;
   width: 70%;
   -webkit-font-smoothing: antialiased;
-  padding-left: 230px;
+  padding:auto;
 }
 
 .head {
@@ -138,4 +138,9 @@ body {
 .block-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 16px #00f7ff80;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
 }

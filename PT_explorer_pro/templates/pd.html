@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="{% static 'pd.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pd.css' %}">
 </head>
 
 <body>
@@ -11,14 +11,14 @@
         <h2 style="text-align:center; margin: 20px 0; color: #00ffcc;">Explore the Periodic Table</h2>
         <div class="sidebar" id="sidebar">
             <div class="sidebar-logo">PT Explorer</div>
-            <a href="../table structure.html">Home</a>
-            <a href="pd.html">Periodic Table</a>
-            <a href="blocks.html">Blocks</a>
-            <a href="timeline.html">Timeline</a>
-            <a href="EC.html">Atomic Shells</a>
-            <a href="EC-Shells.html">Electronic Shells</a>
-            <a href="Atomic-shell.html">Main Shells</a>
-            <a href="mindmap.html">Mind Maps</a>
+            <a href="{% url 'table_structure' %}">Home</a>
+            <a href="{% url 'pd' %}">Periodic Table</a>
+            <a href="{% url 'blocks' %}">Blocks</a>
+            <a href="{% url 'timeline' %}">Timeline</a>
+            <a href="{% url 'atomic_shell' %}">Atomic Shells</a>
+            <a href="{% url 'ec_shells' %}">Electronic Shells</a>
+            <a href="{% url 'ec' %}">Main Shells</a>
+            <a href="{% url 'mindmap' %}">Mind Maps</a>
         </div>
         <div class="category-controls">
             <button data-category="all">All</button>
@@ -294,20 +294,17 @@
         <p>Click on an element to learn more about it!</p>
         <section id="hydrogen-info" class="element-info hidden">
             <h2>Hydrogen (H)</h2>
-
             <p>
                 Hydrogen is the lightest and simplest chemical element in the periodic table.
                 It has an atomic number of 1, meaning it contains only one proton and one
                 electron. Due to its simple structure, hydrogen is highly reactive and
                 rarely exists in its free form on Earth.
             </p>
-
             <p>
                 Hydrogen is the most abundant element in the universe and plays a vital role
                 in the life cycle of stars. In stellar cores, hydrogen atoms undergo nuclear
                 fusion to form helium, releasing enormous amounts of energy.
             </p>
-
             <p>
                 On Earth, hydrogen is commonly found combined with other elements, such as
                 oxygen in water and carbon in organic compounds. It is widely used in fuel
@@ -317,20 +314,17 @@
 
         <section id="helium-info" class="element-info hidden">
             <h2>Helium (He)</h2>
-
             <p>
                 Helium is a colorless, odorless, and non-reactive noble gas with an atomic
                 number of 2. It is the second lightest element in the periodic table and
                 exists as a monoatomic gas under normal conditions.
             </p>
-
             <p>
                 Helium is formed in large quantities through nuclear fusion in stars and is
                 one of the most abundant elements in the universe. Due to its very low
                 density, helium can escape Earth’s gravity, making it relatively rare on
                 our planet.
             </p>
-
             <p>
                 On Earth, helium is mainly obtained from natural gas deposits. It is widely
                 used in cryogenics for cooling superconducting magnets, in balloons and
@@ -344,10 +338,11 @@
 
 
     <div id="tooltip" class="tooltip hidden"></div>
+    <div id="elementChartPopup" class="hidden"></div>
+
 
     <!-- Link your JavaScript file -->
-    <script src="../script.js"></script>
-    <script src="pd.js"></script>
+    <script src="{% static 'js/pd.js' %}"></script>
 
 </body>
 

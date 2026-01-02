@@ -95,7 +95,7 @@ body {
   background: #000;
   color: #e2f6ff;
   margin: 0;
-  padding: 0 0 60px 240px;
+  padding: auto;
 }
 
 /* Section header */

@@ -1,117 +1,119 @@
-// -----------------------
-// Category Highlight Logic
-// -----------------------
-const buttons = document.querySelectorAll(".category-controls button");
-const elements = document.querySelectorAll(".element");
+document.addEventListener("DOMContentLoaded", () => {
 
-buttons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const category = btn.dataset.category;
+  /* =========================
+     SIDEBAR TOGGLE
+  ========================== */
+  window.toggleSidebar = function () {
+    const sidebar = document.getElementById("sidebar");
+    if (sidebar) sidebar.classList.toggle("open");
+  };
 
-    elements.forEach(el => {
-      el.classList.remove("highlight", "dim");
+  function openElementPopup() {
+  const popup = document.getElementById("elementChartPopup");
+  if (!popup) return;
 
-      if (category === "all") return;
+  // Reset scroll every time
+  popup.scrollTop = 0;
 
-      if (!el.classList.contains(category)) {
-        el.classList.add("dim");
-      } else {
-        el.classList.add("highlight");
-      }
-    });
-  });
-});
+  popup.classList.remove("hidden");
 
-// -----------------------
-// Tooltip Logic
-// -----------------------
-const tooltip = document.createElement("div");
-tooltip.className = "element-details";
-document.body.appendChild(tooltip);
-
-elements.forEach(el => {
-  el.addEventListener("mouseenter", e => {
-    tooltip.innerHTML = `
-      <h2>${el.dataset.name}</h2>
-      <p>Atomic Number: <strong>${el.dataset.number}</strong></p>
-      <p>Symbol: <strong>${el.dataset.symbol}</strong></p>
-    `;
-    tooltip.style.left = e.pageX + 15 + "px";
-    tooltip.style.top = e.pageY + 15 + "px";
-    tooltip.classList.add("show");
-  });
-
-  el.addEventListener("mousemove", e => {
-    tooltip.style.left = e.pageX + 15 + "px";
-    tooltip.style.top = e.pageY + 15 + "px";
-  });
-
-  el.addEventListener("mouseleave", () => {
-    tooltip.classList.remove("show");
-  });
-});
-
-// -----------------------
-// 3D Lift + Dynamic Shadow
-// -----------------------
-elements.forEach(el => {
-  el.addEventListener("mousemove", e => {
-    const rect = el.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const offsetX = ((x / rect.width) - 0.5) * 20;
-    const offsetY = ((y / rect.height) - 0.5) * 20;
-
-    const bgColor = window.getComputedStyle(el).backgroundColor;
-
-    el.style.transform = `translateX(${-offsetX}px) translateY(${-offsetY}px)`;
-    el.style.boxShadow = `${offsetX}px ${offsetY}px 15px ${bgColor}`;
-  });
-
-  el.addEventListener("mouseleave", () => {
-    el.style.transform = "";
-    el.style.boxShadow = "";
-  });
-});
-
-// -----------------------
-// Reset Highlight (All button)
-// -----------------------
-const resetButton = document.querySelector(
-  '.category-controls button[data-category="all"]'
-);
-
-if (resetButton) {
-  resetButton.addEventListener("click", () => {
-    elements.forEach(el => {
-      el.classList.remove("highlight", "dim");
-    });
+  requestAnimationFrame(() => {
+    popup.scrollTop = 0;
+    popup.classList.add("visible");
   });
 }
 
-// -----------------------
-// Element Info Section Toggle
-// -----------------------
-const infoSections = document.querySelectorAll(".element-info");
+  /* =========================
+     ELEMENT TOOLTIP
+  ========================== */
+  const elements = document.querySelectorAll(".element");
+  const tooltip = document.getElementById("tooltip");
 
-elements.forEach(el => {
-  el.addEventListener("click", () => {
-    const elementName = el.dataset.name.toLowerCase().replace(/\s+/g, "-");
-    const targetSection = document.getElementById(`${elementName}-info`);
+  elements.forEach(el => {
 
-    // hide all sections first
-    infoSections.forEach(sec => sec.classList.add("hidden"));
+    el.addEventListener("mouseenter", () => {
+      if (!tooltip) return;
 
-    // show the clicked element section
-    if (targetSection) {
-      targetSection.classList.remove("hidden");
-      targetSection.scrollIntoView({ behavior: "smooth" });
-    }
+      const { name, symbol, number, mass } = el.dataset;
+      if (!name || !symbol || !number || !mass) return;
+
+      tooltip.innerHTML = `
+        <strong>${symbol}</strong><br>
+        ${name}<br>
+        Atomic Number: ${number}<br>
+        Atomic Mass: ${mass}
+      `;
+
+      tooltip.classList.remove("hidden");
+    });
+
+    el.addEventListener("mousemove", e => {
+      if (!tooltip) return;
+      tooltip.style.top = e.clientY + 15 + "px";
+      tooltip.style.left = e.clientX + 15 + "px";
+    });
+
+    el.addEventListener("mouseleave", () => {
+      tooltip && tooltip.classList.add("hidden");
+    });
   });
+
+  /* =========================
+     CATEGORY FILTER (HIGHLIGHT / DIM)
+  ========================== */
+  const buttons = document.querySelectorAll(".category-controls button");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const category = button.dataset.category;
+
+      elements.forEach(el => {
+        el.classList.remove("highlight", "dim");
+
+        if (category === "all") return;
+
+        if (el.classList.contains(category)) {
+          el.classList.add("highlight");
+        } else {
+          el.classList.add("dim");
+        }
+      });
+
+      // Active button state
+      buttons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+    });
+  });
+
+   /* =========================
+     ELEMENT INFO + AUTO SCROLL
+  ========================== */
+  elements.forEach(el => {
+    el.addEventListener("click", e => {
+      e.preventDefault(); // stops <a href="#"> jump
+
+      const name = el.dataset.name;
+      if (!name) return;
+
+      const targetId = name.toLowerCase() + "-info";
+      const section = document.getElementById(targetId);
+
+      if (!section) return;
+
+      // Hide all info sections
+      document.querySelectorAll(".element-info").forEach(info => {
+        info.classList.add("hidden");
+      });
+
+      // Show selected section
+      section.classList.remove("hidden");
+
+      // Smooth scroll to info
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  });
+
 });
-
-
-
-
-

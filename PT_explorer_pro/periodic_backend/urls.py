@@ -25,10 +25,12 @@ urlpatterns = [
     path('table_structure/', views.table_structure, name='table_structure'),
     path('atomic_shell/', views.atomic_shell, name='atomic_shell'),
     path('blocks/', views.blocks, name='blocks'),
-    path('ec_shells/', views.ec_shells, name='ec_shells'),
+    path('ec- shells/', views.ec_shells, name='ec_shells'),
     path('login/', views.login, name='login'),
     path('mindmap/', views.mindmap, name='mindmap'),
     path('pd/', views.pd, name='pd'),
     path('quizes/', views.quizes, name='quizes'),
     path('timeline/', views.timeline, name='timeline'),
+    path('ec/', views.ec, name='ec'),
+    
 ]

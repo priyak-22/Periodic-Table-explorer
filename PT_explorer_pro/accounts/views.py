@@ -5,13 +5,13 @@ def table_structure(request):
     return render(request, 'table_structure.html')
 
 def atomic_shell(request):
-    return render(request, 'atomic_shell.html')
+    return render(request, 'atomic-shell.html')
  
 def blocks(request):
     return render(request, 'blocks.html')
 
 def ec_shells(request):
-    return render(request, 'ec_shells.html')
+    return render(request, 'ec-shells.html')
 
 def login(request):
     return render(request, 'login.html')
@@ -27,3 +27,6 @@ def quizes(request):
 
 def timeline(request):
     return render(request, 'timeline.html')
+
+def ec(request):
+    return render(request, 'ec.html')
