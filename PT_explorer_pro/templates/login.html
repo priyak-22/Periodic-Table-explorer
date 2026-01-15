@@ -7,11 +7,10 @@
   <title>Login | PT Explorer</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/plogin.css' %}" />
 </head>
 
 <body>
-
   <!-- Background gradient -->
   <div class="bg-gradient"></div>
 
@@ -22,22 +21,28 @@
       <h1>PT Explorer</h1>
       <p class="subtitle">Sign in to continue exploring chemistry</p>
 
-      <form>
+      <form method="post" autocomplete="off">
+        {% csrf_token %}
+        
         <div class="input-group">
-          <input type="email" required />
+          <input type="email" name="email" required autocomplete="off" />
           <label>Email</label>
         </div>
 
         <div class="input-group">
-          <input type="password" required />
+          <input type="password" name="password" required autocomplete="new-password" />
           <label>Password</label>
         </div>
 
         <button type="submit" class="login-btn">Login</button>
+
+        {% if error %}
+          <p style="color:red; margin-top:10px;">{{ error }}</p>
+        {% endif %}
       </form>
 
       <div class="extra-links">
-        <a href="#">Create account</a>
+        <a href="{% url 'signup' %}">Create account</a>
         <span>•</span>
         <a href="#">Forgot password?</a>
       </div>

@@ -2,63 +2,201 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="{% static 'css/timeline.css' %}">
+  <link rel="stylesheet" href="{% static 'css/timeline.css' %}">
 </head>
 
 <body>
-     <div class="menu-btn" onclick="toggleSidebar()">☰</div>
-    <div class="sidebar" id="sidebar">
-            <div class="sidebar-logo">PT Explorer</div>
-            <a href="{% url 'table_structure' %}">Home</a>
-            <a href="{% url 'pd' %}">Periodic Table</a>
-            <a href="{% url 'blocks' %}">Blocks</a>
-            <a href="{% url 'timeline' %}">Timeline</a>
-            <a href="{% url 'atomic_shell' %}">Atomic Shells</a>
-            <a href="{% url 'ec_shells' %}">Electronic Shells</a>
-            <a href="{% url 'ec' %}">Main Shells</a>
-            <a href="{% url 'mindmap' %}">Mind Maps</a>
+  <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-logo">PT Explorer</div>
+    <a href="{% url 'table_structure' %}">Home</a>
+    <a href="{% url 'pd' %}">Periodic Table</a>
+    <a href="{% url 'blocks' %}">Blocks</a>
+    <a href="{% url 'timeline' %}">Timeline</a>
+    <a href="{% url 'ec_shells' %}">Electronic Shells</a>
+    <a href="{% url 'ec' %}">Main Shells</a>
+    <a href="{% url 'mindmap' %}">Mind Map</a>
+
+
+  </div>
+  <section id="timeline" class="timeline-section">
+    <h2>Complete Timeline of the Periodic Table</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">1669</div>
+        <div class="timeline-content">
+          <h4>First modern elemental discovery</h4>
+          <p>Hennig Brand isolates phosphorus, marking one of the earliest discoveries of an element by chemical means.
+          </p>
         </div>
-    <section id="timeline" class="timeline-section">
-        <h2>Discovery Timeline of Periodic Table Blocks</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">1735 - 1807</div>
-                <div class="timeline-content">
-                    <h4>s-block</h4>
-                    <p>Elements like Hydrogen, Lithium, and Sodium were among the earliest discovered due to their
-                        high reactivity and abundance.</p>
-                </div>
-            </div>
+      </div>
 
-            <div class="timeline-item">
-                <div class="timeline-date">1808 - 1900</div>
-                <div class="timeline-content">
-                    <h4>p-block</h4>
-                    <p>Non-metals and noble gases like Oxygen, Nitrogen, and Neon were isolated and identified
-                        during this time.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-date">1790s - 1920s</div>
-                <div class="timeline-content">
-                    <h4>d-block</h4>
-                    <p>Transition metals like Iron, Copper, and Zinc were known since ancient times, but formally
-                        studied during this period.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-date">1900 - 1940+</div>
-                <div class="timeline-content">
-                    <h4>f-block</h4>
-                    <p>Lanthanides and actinides like Uranium and Plutonium were discovered during the 20th century,
-                        often with complex isolation processes.</p>
-                </div>
-            </div>
+      <div class="timeline-item">
+        <div class="timeline-date">1766</div>
+        <div class="timeline-content">
+          <h4>Hydrogen identified</h4>
+          <p>Henry Cavendish studies “inflammable air,” later named hydrogen by Antoine Lavoisier, paving the way for
+            systematic elemental understanding.</p>
         </div>
-    </section>
-    <script src="{% static 'js/script.js' %}"></script>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">1789</div>
+        <div class="timeline-content">
+          <h4>Lavoisier’s list of elements</h4>
+          <p>Antoine Lavoisier publishes a list distinguishing elements from compounds, establishing foundational
+            chemical taxonomy.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">1803–1808</div>
+        <div class="timeline-content">
+          <h4>Dalton’s atomic theory</h4>
+          <p>John Dalton proposes atoms as indivisible units and introduces relative atomic weights, enabling
+            quantitative comparisons between elements.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">1817–1829</div>
+        <div class="timeline-content">
+          <h4>Early periodic patterns</h4>
+          <p>Johann Döbereiner identifies “triads”—groups of three elements with related properties—hinting at periodic
+            relationships.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">1857–1864</div>
+        <div class="timeline-content">
+          <h4>Valence and periodicity concepts evolve</h4>
+          <p>Frankland’s valence ideas and Newlands’ Law of Octaves suggest repeating chemical properties when elements
+            are ordered by atomic weight.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">1869</div>
+        <div class="timeline-content">
+          <h4>Mendeleev’s periodic table published</h4>
+          <p>Dmitri Mendeleev arranges elements by atomic weight and properties, predicts undiscovered elements, and
+            leaves gaps for future discoveries.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">1894–1898</div>
+        <div class="timeline-content">
+          <h4>Noble gases discovered</h4>
+          <p>Rayleigh and Ramsay identify argon and other noble gases, leading to the addition of a new group to the
+            periodic table.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">1897</div>
+        <div class="timeline-content">
+          <h4>Electron discovered</h4>
+          <p>J. J. Thomson’s discovery of the electron begins a deeper understanding of atomic structure underlying
+            periodic trends.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">1909–1911</div>
+        <div class="timeline-content">
+          <h4>Nuclear model of the atom</h4>
+          <p>Rutherford’s gold foil experiment reveals a dense nucleus, reshaping atomic models and the theoretical
+            basis of periodicity.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">1913</div>
+        <div class="timeline-content">
+          <h4>Moseley and atomic number</h4>
+          <p>Henry Moseley shows that atomic number, not atomic weight, orders elements correctly, correcting
+            inconsistencies in Mendeleev’s table.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">1913–1920s</div>
+        <div class="timeline-content">
+          <h4>Quantum foundations</h4>
+          <p>Bohr’s model and emerging quantum theory explain electron shells and periodic trends, giving theoretical
+            support to the table’s structure.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">1930s–1940s</div>
+        <div class="timeline-content">
+          <h4>Artificial elements and transuranium</h4>
+          <p>Particle accelerators enable synthesis of elements beyond uranium; neptunium and plutonium broaden the
+            table into new territory.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">1945–1955</div>
+        <div class="timeline-content">
+          <h4>Actinide concept</h4>
+          <p>Glenn T. Seaborg reorganizes the table by placing actinides below lanthanides, clarifying f-block placement
+            and chemical behavior.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">1960s–1980s</div>
+        <div class="timeline-content">
+          <h4>Standardization and pedagogy</h4>
+          <p>International bodies promote consistent group numbering and layouts; periodic trends become central in
+            chemical education worldwide.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">1994–2010</div>
+        <div class="timeline-content">
+          <h4>Elements 110–118 pursued</h4>
+          <p>Collaborations synthesize superheavy elements, extending the table and testing theories about nuclear
+            stability and the “island of stability.”</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2016</div>
+        <div class="timeline-content">
+          <h4>Nh, Fl, Mc, Ts named</h4>
+          <p>IUPAC approves names for elements 113 (Nihonium), 114 (Flerovium), 115 (Moscovium), 117 (Tennessine), and
+            118 (Oganesson), completing period 7.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2019</div>
+        <div class="timeline-content">
+          <h4>International Year of the Periodic Table</h4>
+          <p>Global recognition of the table’s 150th anniversary sparks new educational resources and public engagement
+            with chemistry.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">2020s</div>
+        <div class="timeline-content">
+          <h4>Ongoing research</h4>
+          <p>Experiments continue on superheavy elements and periodicity at extremes, refining atomic data, isotopic
+            masses, and boundaries of the table.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>

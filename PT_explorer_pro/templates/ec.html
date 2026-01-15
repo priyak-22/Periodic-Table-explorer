@@ -6,18 +6,19 @@
 </head>
 
 <body>
-     <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+    <div class="menu-btn" onclick="toggleSidebar()">☰</div>
     <div class="sidebar" id="sidebar">
-            <div class="sidebar-logo">PT Explorer</div>
-            <a href="{% url 'table_structure' %}">Home</a>
-            <a href="{% url 'pd' %}">Periodic Table</a>
-            <a href="{% url 'blocks' %}">Blocks</a>
-            <a href="{% url 'timeline' %}">Timeline</a>
-            <a href="{% url 'atomic_shell' %}">Atomic Shells</a>
-            <a href="{% url 'ec_shells' %}">Electronic Shells</a>
-            <a href="{% url 'ec' %}">Main Shells</a>
-            <a href="{% url 'mindmap' %}">Mind Maps</a>
-        </div>
+        <div class="sidebar-logo">PT Explorer</div>
+        <a href="{% url 'table_structure' %}">Home</a>
+        <a href="{% url 'pd' %}">Periodic Table</a>
+        <a href="{% url 'blocks' %}">Blocks</a>
+        <a href="{% url 'timeline' %}">Timeline</a>
+        <a href="{% url 'ec_shells' %}">Electronic Shells</a>
+        <a href="{% url 'ec' %}">Main Shells</a>
+        <a href="{% url 'mindmap' %}">Mind Map</a>
+
+
+    </div>
 
     <section id="electronic-configuration" class="concept-section">
         <div class="concept-header">
@@ -42,7 +43,8 @@
 
         <div class="orbital-diagram">
             <h3>Aufbau Order Diagram</h3>
-            <img src="../../Image data/afabua.jpg" alt="Aufbau Diagram" class="aufbau-img" />
+            <img src="{% static 'Image-data/afabua.jpg' %}" alt="Aufbau Diagram" class="aufbau-img"
+                onclick="openImage(this)" />
         </div>
 
         <div class="config-example">
@@ -66,23 +68,41 @@
             <div class="subshell s-orbital">
                 <h3>s Orbital</h3>
                 <p>Shape: Spherical<br>Max Electrons: 2</p>
-                <img src="../../Image data/sorbit.png">
+                <img src="{% static 'Image-data/sorbit.png' %}" onclick="openImage(this)">
             </div>
             <div class="subshell p-orbital">
                 <h3>p Orbital</h3>
                 <p>Shape: Dumbbell<br>Max Electrons: 6</p>
-                <img src="../../Image data/porbit.png">
+                <img src="{% static 'Image-data/porbit.png' %}" onclick="openImage(this)">
             </div>
             <div class="subshell d-orbital">
                 <h3>d Orbital</h3>
                 <p>Shape: Double Dumbbell<br>Max Electrons: 10</p>
-                <img src="../../Image data/dorbit.png">
+                <img src="{% static 'Image-data/dorbit.png' %}" onclick="openImage(this)">
             </div>
 
         </div>
 
     </section>
+
+    <!-- Image Viewer Modal -->
+    <div id="imgModal" class="img-modal">
+        <span class="close-btn" onclick="closeImage()">×</span>
+        <img id="modalImg" class="modal-img">
+    </div>
+
     <script src="{% static 'js/script.js' %}"></script>
+    <script>
+        function openImage(img) {
+            document.getElementById("modalImg").src = img.src;
+            document.getElementById("imgModal").classList.add("active");
+        }
+
+        function closeImage() {
+            document.getElementById("imgModal").classList.remove("active");
+        }
+    </script>
+
 </body>
 
 </html>

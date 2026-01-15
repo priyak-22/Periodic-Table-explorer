@@ -6,55 +6,69 @@
 </head>
 
 <body>
-     <div class="menu-btn" onclick="toggleSidebar()">☰</div>
-   <div class="sidebar" id="sidebar">
-            <div class="sidebar-logo">PT Explorer</div>
-            <a href="{% url 'table_structure' %}">Home</a>
-            <a href="{% url 'pd' %}">Periodic Table</a>
-            <a href="{% url 'blocks' %}">Blocks</a>
-            <a href="{% url 'timeline' %}">Timeline</a>
-            <a href="{% url 'atomic_shell' %}">Atomic Shells</a>
-            <a href="{% url 'ec_shells' %}">Electronic Shells</a>
-            <a href="{% url 'ec' %}">Main Shells</a>
-            <a href="{% url 'mindmap' %}">Mind Maps</a>
-        </div>
-    <section id="mindmaps" class="mindmap-section">
+    <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-logo">PT Explorer</div>
+        <a href="{% url 'table_structure' %}">Home</a>
+        <a href="{% url 'pd' %}">Periodic Table</a>
+        <a href="{% url 'blocks' %}">Blocks</a>
+        <a href="{% url 'timeline' %}">Timeline</a>
+        <a href="{% url 'ec_shells' %}">Electronic Shells</a>
+        <a href="{% url 'ec' %}">Main Shells</a>
+        <a href="{% url 'mindmap' %}">Mind Map</a>
+
+    </div>
+    <section class="mindmap-section">
+
+        <!-- UNLOCKED CONTENT -->
         <h2>Periodic Table Mind Maps</h2>
         <p>Select a block to explore concept maps.</p>
 
-        <div class="mindmap-gallery">
-            <img src="{% static 'Image-data/sblock.png' %}" alt="S-Block" data-block="s">
-            <img src="{% static 'Image-data/pblock.png' %}" alt="P-Block" data-block="p">
-            <img src="{% static 'Image-data/dblock.png' %}" alt="D-Block" data-block="d">
-            <img src="{% static 'Image-data/fblock.png' %}" alt="F-Block" data-block="f">
+        <div class="mindmap-gallery unlocked">
+            <img src="{% url 'protected_mindmap' 'sblock.png' %}">
+            <img src="{% url 'protected_mindmap' 'pblock.png' %}">
+            <img src="{% url 'protected_mindmap' 'dblock.png' %}">
+            <img src="{% url 'protected_mindmap' 'fblock.png' %}">
         </div>
+
+
     </section>
+
+
+
 
     <!-- Popup -->
     <div id="mindmapModal" class="mindmap-modal hidden">
         <button id="modalClose" class="modal-close">×</button>
         <img id="modalImg" src="" alt="Mindmap Full">
     </div>
-    <script >
-        const modal = document.getElementById("mindmapModal");
-        const modalImg = document.getElementById("modalImg");
-        const modalClose = document.getElementById("modalClose");
+    <script>
+    const modal = document.getElementById("mindmapModal");
+    const modalImg = document.getElementById("modalImg");
+    const modalClose = document.getElementById("modalClose");
 
-        document.querySelectorAll(".mindmap-gallery img").forEach(img => {
-            img.addEventListener("click", () => {
-                modalImg.src = img.src;
-                modal.classList.remove("hidden");
-            });
-        });
+    const isLoggedIn = {{ user.is_authenticated|yesno:"true,false" }};
 
-        modalClose.addEventListener("click", () => {
-            modal.classList.add("hidden");
+    document.querySelectorAll(".mindmap-gallery img").forEach(img => {
+        img.addEventListener("click", () => {
+            if (!isLoggedIn) {
+                alert("Please login to view mind maps!");
+                return;
+            }
+            modalImg.src = img.src;
+            modal.classList.remove("hidden");
         });
+    });
 
-        modal.addEventListener("click", e => {
-            if (e.target === modal) modal.classList.add("hidden");
-        });
-    </script>
+    modalClose.addEventListener("click", () => {
+        modal.classList.add("hidden");
+    });
+
+    modal.addEventListener("click", e => {
+        if (e.target === modal) modal.classList.add("hidden");
+    });
+</script>
+
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 

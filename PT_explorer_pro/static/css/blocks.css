@@ -1,9 +1,22 @@
+/* =======================
+   Global Styles
+======================= */
 html {
   scroll-behavior: smooth;
 }
-/* -----------------------
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: radial-gradient(circle at top, #020617, #000);
+  color: #e5faff;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =======================
    Sidebar
------------------------- */
+======================= */
 .sidebar {
   position: fixed;
   left: 0;
@@ -19,12 +32,13 @@ html {
   align-items: center;
   z-index: 1000;
   transform: translateX(-100%);
-transition: transform 0.3s ease;
-
+  transition: transform 0.3s ease;
 }
+
 .sidebar.open {
   transform: translateX(0);
 }
+
 .menu-btn {
   position: fixed;
   top: 15px;
@@ -34,7 +48,6 @@ transition: transform 0.3s ease;
   cursor: pointer;
   z-index: 1100;
 }
-
 
 .sidebar-logo {
   font-size: 1.3rem;
@@ -67,80 +80,167 @@ transition: transform 0.3s ease;
   color: #00f0ff;
 }
 
-
-
-/* -----------------------
-    Body styles
------------------------- */
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: black;
-  color: white;
-  justify-content: center;
+/* =======================
+   Main Content
+======================= */
+.main-content {
+  max-width: 1200px;
   margin: auto;
-  width: 70%;
-  -webkit-font-smoothing: antialiased;
-  padding:auto;
+  padding: 3rem 1.5rem;
+  margin-left: 80px; /* offset for sidebar */
 }
 
+/* =======================
+   Header
+======================= */
 .head {
-  margin-top: 30px;
-  font-size: 30px;
-}
-.block-info-section {
-  padding: 2rem;
-  background: black;
-  color: #fff;
+  font-size: 2.2rem;
+  color: #00f7ff;
+  text-shadow: 0 0 10px #00f7ff;
+  margin-bottom: 2rem;
   text-align: center;
-  border-top: 2px solid #38bdf8;
-  border-radius: 10px;
+}
+
+/* =======================
+   Block Info Section
+======================= */
+.block-info-section {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 15, 20, 0.9),
+    rgba(0, 0, 0, 0.95)
+  );
+  padding: 3rem 2rem;
+  border-radius: 18px;
+  border: 1px solid #00f7ff55;
+  box-shadow: 0 0 25px #00f7ff30;
+  margin-top: 5rem;
 }
 
 .block-info-section h2 {
   font-size: 2rem;
-  margin-bottom: 0.5rem;
   color: #00f7ff;
-  text-shadow: 0 0 8px #00f7ff;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px #00f7ff;
+  text-align: center;
 }
 
-.block-info-section p {
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
+/* =======================
+   Cards Layout
+======================= */
 .block-info-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  padding-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: stretch;
+  margin-top: 2rem;
 }
 
+/* =======================
+   Block Cards
+======================= */
 .block-card {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-left: 4px solid #00f7ff;
-  padding: 1rem;
-  width: 260px;
-  border-radius: 12px;
-  box-shadow: 0 0 12px #00f7ff40;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  background: linear-gradient(
+    145deg,
+    rgba(5, 25, 35, 0.85),
+    rgba(0, 0, 0, 0.95)
+  );
+  padding: 1.5rem;
+  width: 100%;
+  min-height: 240px;
+  border-radius: 16px;
+  border: 1px solid #00f7ff44;
+  box-shadow:
+    inset 0 0 15px #00f7ff22,
+    0 0 18px #00f7ff25;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.block-card h3 {
-  margin-bottom: 0.5rem;
-  color: #00eaff;
-  font-size: 1.25rem;
+/* Neon border sweep */
+.block-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    #00f7ff6b,
+    transparent
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
 }
 
+/* Hover Effects */
 .block-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 16px #00f7ff80;
+  transform: scale(1.05);
+  z-index: 10;
+  box-shadow: 0 0 30px #00f7ff99;
 }
 
-a{
+.block-card:hover::before {
+  opacity: 1;
+}
+
+/* Dim non-hovered cards */
+.block-info-cards:hover .block-card:not(:hover) {
+  filter: brightness(0.6);
+}
+
+/* =======================
+   Text Styling
+======================= */
+.block-card h3 {
+  font-size: 1.3rem;
+  color: #00eaff;
+  margin-bottom: 0.6rem;
+  text-shadow: 0 0 6px #00eaff;
+}
+
+.block-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #f1eff3;
+}
+
+/* =======================
+   Links
+======================= */
+a {
   text-decoration: none;
   color: inherit;
 }
+
+/* =======================
+   Responsive
+======================= */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 2rem 1rem;
+  }
+
+  .menu-btn {
+    font-size: 22px;
+  }
+
+  .block-card {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .block-card {
+    min-height: 200px;
+    padding: 1rem;
+  }
+}
+

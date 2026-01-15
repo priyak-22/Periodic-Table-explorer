@@ -6,68 +6,102 @@
 </head>
 
 <body>
-     <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+    <div class="menu-btn" onclick="toggleSidebar()">☰</div>
     <div class="sidebar" id="sidebar">
-            <div class="sidebar-logo">PT Explorer</div>
-            <a href="{% url 'table_structure' %}">Home</a>
-            <a href="{% url 'pd' %}">Periodic Table</a>
-            <a href="{% url 'blocks' %}">Blocks</a>
-            <a href="{% url 'timeline' %}">Timeline</a>
-            <a href="{% url 'atomic_shell' %}">Atomic Shells</a>
-            <a href="{% url 'ec_shells' %}">Electronic Shells</a>
-            <a href="{% url 'ec' %}">Main Shells</a>
-            <a href="{% url 'mindmap' %}">Mind Maps</a>
-        </div>
+        <div class="sidebar-logo">PT Explorer</div>
+        <a href="{% url 'table_structure' %}">Home</a>
+        <a href="{% url 'pd' %}">Periodic Table</a>
+        <a href="{% url 'blocks' %}">Blocks</a>
+        <a href="{% url 'timeline' %}">Timeline</a>
+        <a href="{% url 'ec_shells' %}">Electronic Shells</a>
+        <a href="{% url 'ec' %}">Main Shells</a>
+        <a href="{% url 'mindmap' %}">Mind Map</a>
+
+
+    </div>
     <section id="block-section" class="block-info-section">
         <h2>Understanding Periodic Table Blocks</h2>
-        <p>The periodic table is divided into blocks based on the electron configuration of elements. These blocks —
-            s, p, d, and f — help group elements with similar properties.</p>
 
         <div class="block-info-cards">
             <div class="block-card s-block">
-                <h3>s-block</h3>
-                <p>Includes Group 1 & 2 ,alkali and alkaline earth metals.<br>
-
-                    Electron fills in f orbital<br>
-                    Mostly radioactive (Actinides)<br>
-                    Used in high-tech industries<br>
-                    Ex: Uranium, Cerium<br>
+                <h3>S-Block</h3>
+                <p>
+                    Includes Group 1 (Alkali Metals) & Group 2 (Alkaline Earth Metals).<br>
+                    Electron configuration ends in <strong>s-orbital</strong>.<br>
+                    Highly reactive metals, especially with water and oxygen.<br>
+                    Soft metals (like Lithium, Sodium) and low melting points.<br>
+                    Good conductors of electricity.<br>
+                    Mostly metallic and form basic oxides.<br>
+                    Some elements are radioactive (Actinides) and used in nuclear energy.<br>
+                    Important in biological systems (e.g., Calcium for bones, Sodium & Potassium for nerve
+                    function).<br>
+                    Used in high-tech industries, batteries, aerospace, and nuclear reactors.<br>
+                    Examples: Lithium, Sodium, Calcium, Magnesium, Uranium, Cerium.<br>
+                    Trends:<br>
+                    - Reactivity increases down the group.<br>
+                    - Atomic and ionic radii increase down the group.<br>
+                    - Ionization energy decreases down the group.<br>
                 </p>
-
-                
-
             </div>
+
+
             <div class="block-card p-block">
-                <h3>p-block</h3>
-                <p>Groups 13 to 18. Contains metals, nonmetals, metalloids, and noble gases. Electrons fill the p
-                    orbital.
-                    Contains metals, metalloids, and non-metals<br>
-                    Electron fills in p orbital<br>
-                    Includes Noble gases and Halogens<br>
-                    Ex: Carbon, Oxygen, Fluorine<br>
+                <h3>P-Block</h3>
+                <p>
+                    Includes Groups 13 to 18 elements.<br>
+                    Electron configuration ends in <strong>p-orbital</strong>.<br>
+                    Contains metals, metalloids, and non-metals.<br>
+                    Reactivity varies: metals are moderately reactive, non-metals like halogens are highly reactive.<br>
+                    Forms acidic oxides and covalent compounds.<br>
+                    Many elements are essential for life (e.g., Carbon, Nitrogen, Oxygen, Phosphorus).<br>
+                    Used in semiconductors, fertilizers, explosives, and plastics.<br>
+                    Physical properties vary: some are solids (like Phosphorus), liquids (like Bromine), or gases (like
+                    Nitrogen and Oxygen).<br>
+                    Trends:<br>
+                    - Electronegativity increases across the period.<br>
+                    - Atomic size decreases across the period.<br>
+                    - Ionization energy increases across the period.<br>
+                    Examples: Carbon, Nitrogen, Oxygen, Phosphorus, Sulfur, Chlorine, Argon.
                 </p>
             </div>
-            <div class="block-card d-block">
-                <h3>d-block</h3>
-                <p>Transition metals. Found in the center of the table (Groups 3–12). Their d orbitals are being
-                    filled.
-                    Hard, dense metals with high melting points<br>
-                    Electron fills in d orbital<br>
-                    Often show variable oxidation states<br>
-                    Ex: Iron, Copper, Zinc<br>
-                </p>
-            </div>
-            <div class="block-card f-block">
-                <h3>f-block</h3>
-                <p>Lanthanides and actinides. These elements fill the f orbitals and are placed separately at the
-                    bottom.
 
-                    Electron fills in f orbital<br>
-                    Mostly radioactive (Actinides)<br>
-                    Used in high-tech industries<br>
-                    Ex: Uranium, Cerium<br>
+            <div class="block-card d-block">
+                <h3>D-Block</h3>
+                <p>
+                    Includes Groups 3 to 12 elements (Transition Metals).<br>
+                    Electron configuration ends in <strong>d-orbital</strong>.<br>
+                    All are metals with high melting points and densities.<br>
+                    Exhibit variable oxidation states and form colored compounds.<br>
+                    Good conductors of heat and electricity.<br>
+                    Often used as catalysts in chemical reactions.<br>
+                    Many are important in industry: steel production, electronics, alloys.<br>
+                    Chemically less reactive than S-block metals.<br>
+                    Trends:<br>
+                    - Atomic size decreases across the period.<br>
+                    - Ionization energy increases across the period.<br>
+                    - Metallic character decreases across the period.<br>
+                    Examples: Iron, Copper, Zinc, Silver, Gold, Chromium, Manganese.
                 </p>
             </div>
+
+            <div class="block-card f-block">
+                <h3>F-Block</h3>
+                <p>
+                    Contains Lanthanides (Period 6) and Actinides (Period 7).<br>
+                    Electron configuration ends in <strong>f-orbital</strong>.<br>
+                    All are metals, mostly radioactive (especially Actinides).<br>
+                    Lanthanides are called rare earth metals, used in magnets, lasers, and electronics.<br>
+                    Actinides include Uranium and Plutonium, used in nuclear energy and weapons.<br>
+                    Soft metals with high melting points.<br>
+                    Reactivity is moderate, usually forming +3 oxidation state compounds.<br>
+                    Many are important in high-tech and defense industries.<br>
+                    Trends:<br>
+                    - Atomic and ionic radii decrease slightly across the series (lanthanide contraction).<br>
+                    - Magnetic and optical properties vary widely.<br>
+                    Examples: Cerium, Neodymium, Uranium, Thorium, Plutonium.
+                </p>
+            </div>
+
         </div>
     </section>
 

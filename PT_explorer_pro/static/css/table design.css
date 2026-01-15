@@ -10,7 +10,7 @@ body {
   background: #030000;
   color: #f0e6d2;
   margin: 0;
-  padding-right: 20px;
+  padding-right: 0;  /* Set to 0 so navbar can reach extreme right */
   overflow-x: hidden;
   caret-color: transparent;
   user-select: none;
@@ -22,7 +22,7 @@ a {
 }
 
 /* =======================
-   NAVBAR
+   NAVBAR (ALL ITEMS EXTREME RIGHT)
 ======================= */
 .navbar {
   position: sticky;
@@ -30,27 +30,41 @@ a {
   z-index: 999;
   background: black;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end; /* everything pushed to right */
   align-items: center;
   padding: 0.8rem 2rem;
+  width: auto;
   box-shadow: 0 0 15px #00f0ff33;
   border-bottom: 2px solid #00f0ff66;
 }
 
+/* NAV LINKS + USER WRAPPER */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;      /* space between links and user */
+}
+
+
+/* LOGO */
 .nav-logo {
   font-size: 1.5rem;
   color: #00f0ff;
   font-weight: bold;
   text-shadow: 0 0 10px #00f0ff;
+  margin-right: 0; /* optional, logo aligns with links */
 }
 
+
+/* LINKS */
 .nav-links a {
-  margin-left: 2rem;
   font-weight: 500;
   color: white;
   position: relative;
+  white-space: nowrap;
 }
 
+/* HOVER EFFECT */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -68,6 +82,31 @@ a {
 
 .nav-links a:hover::after {
   width: 100%;
+}
+
+/* USER ICON */
+.user-link,
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.user-icon {
+  width: 32px;
+  height: 32px;
+  background: #00f0ff;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.username {
+  font-size: 14px;
 }
 
 /* =======================
@@ -137,7 +176,7 @@ a {
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: black;;
+  background: black;
 }
 
 /* CENTERED TEXT */
@@ -145,7 +184,7 @@ a {
   width: 50%;
   margin: 0 auto;
   text-align: center;
-  padding-top:10px;
+  padding-top: 10px;
   z-index: 5;
   opacity: 0;
   animation: fadeCenter 1.8s ease forwards;
@@ -161,8 +200,6 @@ a {
     transform: translateY(0);
   }
 }
-
-
 
 .text-box h1 {
   font-family: "Cinzel", serif;
@@ -197,7 +234,6 @@ a {
   color: black;
 }
 
-
 /* RIGHT SIDE LINEAR GRADIENT — FADES AT CENTER */
 .intro::after {
   content: "";
@@ -213,6 +249,7 @@ a {
   animation: gradientDrift 7s ease-in-out infinite;
   z-index: 1;
 }
+
 /* -----------------------
    Intro Quick Access Tabs
 ------------------------ */
@@ -243,12 +280,11 @@ a {
   transform: translateY(-4px);
 }
 
-
 /* =======================
    SECTIONS
 ======================= */
 .home-section {
-  padding-top:5px;
+  padding-top: 5px;
   background: black;
   text-align: center;
 }
@@ -303,20 +339,7 @@ a {
   transform: scale(1.05);
 }
 
-/* =======================
-   PERIODIC TABLE
-======================= */
-.periodic-table {
-  display: grid;
-  grid-template-columns: repeat(18, minmax(60px, 1fr));
-  grid-auto-rows: 60px;
-  gap: 4px;
-  margin: 100px auto;
-  min-width: 1080px;
-  background: black;
-  padding: 40px;
-  border-radius: 10px;
-}
+
 
 /* =======================
    RESPONSIVE

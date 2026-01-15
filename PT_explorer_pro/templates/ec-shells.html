@@ -1,169 +1,222 @@
 {% load static %}
 <html>
-    <head>
-        <link rel="stylesheet" href="{% static 'css/ec-shells.css' %}">
-    </head>
-    <body>
-         <div class="menu-btn" onclick="toggleSidebar()">☰</div>
-       <div class="sidebar" id="sidebar">
-            <div class="sidebar-logo">PT Explorer</div>
-            <a href="{% url 'table_structure' %}">Home</a>
-            <a href="{% url 'pd' %}">Periodic Table</a>
-            <a href="{% url 'blocks' %}">Blocks</a>
-            <a href="{% url 'timeline' %}">Timeline</a>
-            <a href="{% url 'atomic_shell' %}">Atomic Shells</a>
-            <a href="{% url 'ec_shells' %}">Electronic Shells</a>
-            <a href="{% url 'ec' %}">Main Shells</a>
-            <a href="{% url 'mindmap' %}">Mind Maps</a>
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/ec-shells.css' %}">
+</head>
+
+<body>
+    <div class="menu-btn" onclick="toggleSidebar()">☰</div>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-logo">PT Explorer</div>
+        <a href="{% url 'table_structure' %}">Home</a>
+        <a href="{% url 'pd' %}">Periodic Table</a>
+        <a href="{% url 'blocks' %}">Blocks</a>
+        <a href="{% url 'timeline' %}">Timeline</a>
+        <a href="{% url 'ec_shells' %}">Electronic Shells</a>
+        <a href="{% url 'ec' %}">Main Shells</a>
+        <a href="{% url 'mindmap' %}">Mind Map</a>
+
+
+    </div>
+    <section id="main-shells" class="shell-visuals-section">
+        <h2>Atomic Shells: K, L, M, N</h2>
+        <div class="shell-visual">
+            <svg viewBox="0 0 400 400" class="shell-svg">
+                <!-- Shells -->
+                <circle cx="200" cy="200" r="40" stroke="#00ffff" stroke-width="2" fill="none" />
+                <circle cx="200" cy="200" r="70" stroke="#00ff99" stroke-width="2" fill="none" />
+                <circle cx="200" cy="200" r="100" stroke="#ffaa00" stroke-width="2" fill="none" />
+                <circle cx="200" cy="200" r="130" stroke="#ff0077" stroke-width="2" fill="none" />
+
+                <!-- Shell Labels -->
+                <text x="200" y="160" fill="#00ffff" font-size="14" text-anchor="middle">K</text>
+                <text x="200" y="130" fill="#00ff99" font-size="14" text-anchor="middle">L</text>
+                <text x="200" y="100" fill="#ffaa00" font-size="14" text-anchor="middle">M</text>
+                <text x="200" y="70" fill="#ff0077" font-size="14" text-anchor="middle">N</text>
+
+                <!-- Electrons -->
+                <!-- K shell -->
+                <circle r="5" fill="#00ffff">
+                    <animateMotion dur="4s" repeatCount="indefinite">
+                        <mpath href="#k-path" />
+                    </animateMotion>
+                </circle>
+                <!-- L shell -->
+                <circle r="5" fill="#00ff99">
+                    <animateMotion dur="5s" repeatCount="indefinite">
+                        <mpath href="#l-path" />
+                    </animateMotion>
+                </circle>
+                <!-- M shell -->
+                <circle r="5" fill="#ffaa00">
+                    <animateMotion dur="6s" repeatCount="indefinite">
+                        <mpath href="#m-path" />
+                    </animateMotion>
+                </circle>
+                <!-- N shell -->
+                <circle r="5" fill="#ff0077">
+                    <animateMotion dur="7s" repeatCount="indefinite">
+                        <mpath href="#n-path" />
+                    </animateMotion>
+                </circle>
+
+                <!-- Electron Paths -->
+                <path id="k-path" d="M200,160 A40,40 0 1,1 199.9,160" fill="none" />
+                <path id="l-path" d="M200,130 A70,70 0 1,1 199.9,130" fill="none" />
+                <path id="m-path" d="M200,100 A100,100 0 1,1 199.9,100" fill="none" />
+                <path id="n-path" d="M200,70 A130,130 0 1,1 199.9,70" fill="none" />
+            </svg>
         </div>
-        
-        <section id="shell-info-flip" class="info-section">
-            <h2 class="section-title">Interactive Electron Shell Cards</h2>
+    </section>
+    <section id="shell-info-flip" class="info-section">
+        <h2 class="section-title">Shell Cards</h2>
 
-            <div class="flip-card-container">
+        <div class="flip-card-container">
 
-                <!-- K Shell -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <h3>K Shell</h3>
-                            <p>1st Shell</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <h3>K Shell</h3>
-                            <p><strong>Capacity:</strong> 2 electrons</p>
-                            <p><strong>Subshells:</strong> 1s</p>
-                            <p><strong>Examples:</strong> H, He</p>
-                            <p> <b>Closest to the nucleu.</b><br>
-                                <b>Tightly bound electron.</b><br>
-                            </p>
-                        </div>
+            <!-- K Shell -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>K Shell</h3>
+                        <p>1st Shell</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>K Shell</h3>
+                        <p><strong>Capacity:</strong> 2 electrons</p>
+                        <p><strong>Subshells:</strong> 1s</p>
+                        <p><strong>Examples:</strong> H, He</p>
+                        <p> <b>Closest to the nucleu.</b><br>
+                            <b>Tightly bound electron.</b><br>
+                        </p>
                     </div>
                 </div>
-
-                <!-- L Shell -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <h3>L Shell</h3>
-                            <p>2nd Shell</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <h3> L Shell</h3>
-                            <p><strong>Capacity:</strong> 8 electrons</p>
-                            <p><strong>Subshells:</strong> 2s, 2p</p>
-                            <p><strong>Examples:</strong> Li, Ne</p>
-                            <p>
-                                <b>
-                                    Defines valence in light elements<br>
-                                    Important in chemical bonding<br>
-                                </b>
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- M Shell -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <h3>M Shell</h3>
-                            <p>3rd Shell</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <h3>M Shell</h3>
-                            <p><strong>Capacity:</strong> 18 electrons</p>
-                            <p><strong>Subshells:</strong> 3s, 3p, 3d</p>
-                            <p><strong>Examples:</strong> Na, Ar, Sc</p>
-                            <p><b>Starts including d orbitals<br>
-                                    In transition metals</b><br></p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- N Shell -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <h3>N Shell</h3>
-                            <p>4th Shell</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <h3>N Shell</h3>
-                            <p><strong>Capacity:</strong> 32 electrons</p>
-                            <p><strong>Subshells:</strong> 4s, 4p, 4d, 4f</p>
-                            <p><strong>Examples:</strong> K, Kr, Ce</p>
-                            <p><b>Contains transition & lanthanides<br>
-                                    Important for magnetic properties</b><br>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- O Shell -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <h3>O Shell</h3>
-                            <p>5th Shell</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <h3>O Shell</h3>
-                            <p><strong>Capacity:</strong> 50 electrons</p>
-                            <p><strong>Subshells:</strong> 5s, 5p, 5d, 5f</p>
-                            <p><strong>Examples:</strong> Rb, Ba, U</p>
-
-                            <p><b>Complex bonding in heavy elements<br>
-                                    Used in radioactive and rare earths</b><br></p>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- P Shell -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <h3>P Shell</h3>
-                            <p>6th Shell</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <h3>P Shell</h3>
-                            <p><strong>Capacity:</strong> 72 electrons</p>
-                            <p><strong>Subshells:</strong> 6s, 6p, 6d</p>
-                            <p><strong>Examples:</strong> Cs, Bi</p>
-                            <p>
-                                <b>Occurs in actinides<br>
-                                    Rare in everyday elements</b><br>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Q Shell -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <h3>Q Shell</h3>
-                            <p>7th Shell</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <h3>Q Shell</h3>
-                            <p><strong>Capacity:</strong> 98 electrons</p>
-                            <p><strong>Subshells:</strong> 7s, 7p, 7d</p>
-                            <p><strong>Examples:</strong> Fr, Og</p>
-                            <p>
-                                <b>Top of periodic limit<br>
-                                    Used in theoretical studies</b><br>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </section>
-        <script src="{% static 'js/script.js' %}"></script>
-    </body>
+
+            <!-- L Shell -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>L Shell</h3>
+                        <p>2nd Shell</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3> L Shell</h3>
+                        <p><strong>Capacity:</strong> 8 electrons</p>
+                        <p><strong>Subshells:</strong> 2s, 2p</p>
+                        <p><strong>Examples:</strong> Li, Ne</p>
+                        <p>
+                            <b>
+                                Defines valence in light elements<br>
+                                Important in chemical bonding<br>
+                            </b>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- M Shell -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>M Shell</h3>
+                        <p>3rd Shell</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>M Shell</h3>
+                        <p><strong>Capacity:</strong> 18 electrons</p>
+                        <p><strong>Subshells:</strong> 3s, 3p, 3d</p>
+                        <p><strong>Examples:</strong> Na, Ar, Sc</p>
+                        <p><b>Starts including d orbitals<br>
+                                In transition metals</b><br></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- N Shell -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>N Shell</h3>
+                        <p>4th Shell</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>N Shell</h3>
+                        <p><strong>Capacity:</strong> 32 electrons</p>
+                        <p><strong>Subshells:</strong> 4s, 4p, 4d, 4f</p>
+                        <p><strong>Examples:</strong> K, Kr, Ce</p>
+                        <p><b>Contains transition & lanthanides<br>
+                                Important for magnetic properties</b><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- O Shell -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>O Shell</h3>
+                        <p>5th Shell</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>O Shell</h3>
+                        <p><strong>Capacity:</strong> 50 electrons</p>
+                        <p><strong>Subshells:</strong> 5s, 5p, 5d, 5f</p>
+                        <p><strong>Examples:</strong> Rb, Ba, U</p>
+
+                        <p><b>Complex bonding in heavy elements<br>
+                                Used in radioactive and rare earths</b><br></p>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- P Shell -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>P Shell</h3>
+                        <p>6th Shell</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>P Shell</h3>
+                        <p><strong>Capacity:</strong> 72 electrons</p>
+                        <p><strong>Subshells:</strong> 6s, 6p, 6d</p>
+                        <p><strong>Examples:</strong> Cs, Bi</p>
+                        <p>
+                            <b>Occurs in actinides<br>
+                                Rare in everyday elements</b><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q Shell -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>Q Shell</h3>
+                        <p>7th Shell</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Q Shell</h3>
+                        <p><strong>Capacity:</strong> 98 electrons</p>
+                        <p><strong>Subshells:</strong> 7s, 7p, 7d</p>
+                        <p><strong>Examples:</strong> Fr, Og</p>
+                        <p>
+                            <b>Top of periodic limit<br>
+                                Used in theoretical studies</b><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
 </html>
