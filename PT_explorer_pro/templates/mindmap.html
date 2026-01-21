@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="{% static 'css/mindmap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
 </head>
 
 <body>
@@ -47,7 +48,7 @@
     const modalImg = document.getElementById("modalImg");
     const modalClose = document.getElementById("modalClose");
 
-    const isLoggedIn = {{ user.is_authenticated|yesno:"true,false" }};
+    const isLoggedIn = "{{ user.is_authenticated|yesno:'true, false' }}" === "true";
 
     document.querySelectorAll(".mindmap-gallery img").forEach(img => {
         img.addEventListener("click", () => {
